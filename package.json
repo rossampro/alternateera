@@ -10,11 +10,22 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@nuxt/content": "latest",
     "@nuxt/devtools": "latest",
-    "@nuxt/image": "latest",
     "@nuxt/ui": "latest",
+    "@pinia/nuxt": "latest",
+    "daisyui": "latest",
     "nuxt": "^3.8.0",
+    "nuxt-icon": "latest",
     "vue": "^3.3.7",
     "vue-router": "^4.2.5"
+  },
+  "trustedDependencies": [
+    "sharp"
+  ],
+  "dependencies": {
+    "@nuxt/image": "^1.0.0",
+    "sharp": "^0.32.6",
+    "theme-change": "^2.5.0"
   }
 }
