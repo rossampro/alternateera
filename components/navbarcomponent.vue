@@ -4,7 +4,7 @@ const isOpen = ref(false);
 
 </script>
 <template>
-    <div class="navbar bg-secondary border-primary">
+    <div class="navbar bg-secondary border-base-100">
         <div class="navbar-start">
             <UIcon name="i-heroicons-bars-3-bottom-left" @click="isOpen = true" class="btn rounded-btn" />
 

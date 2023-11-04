@@ -13,6 +13,7 @@ export default <Partial<Config>>{
         extend: {}
     },
     plugins: [
+        require('@tailwindcss/typography'),
         require('daisyui')
     ],
     daisyui: {

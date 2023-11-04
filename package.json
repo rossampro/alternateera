@@ -14,6 +14,7 @@
     "@nuxt/devtools": "latest",
     "@nuxt/ui": "latest",
     "@pinia/nuxt": "latest",
+    "@tailwindcss/typography": "^0.5.10",
     "daisyui": "latest",
     "nuxt": "^3.8.0",
     "nuxt-icon": "latest",
