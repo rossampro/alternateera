@@ -28,7 +28,7 @@ const getTheme = () => {
     <div class="dropdown dropdown-end">
         <div tabindex="0" class="btn normal-case btn-ghost">
             <span class="hidden font-normal md:inline">Theme</span>
-            <UIcon name="i-heroicons-arrow-down" />
+            <Icon name="heroicons-outline:arrow-down" />
         </div>
         <div
             class="dropdown-content bg-base-300 text-base-content rounded-box top-px h=[70vh] max-h-32 w-56 overscroll-y-auto shadow mt-16">

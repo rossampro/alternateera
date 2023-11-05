@@ -12,7 +12,7 @@
   "devDependencies": {
     "@nuxt/content": "latest",
     "@nuxt/devtools": "latest",
-    "@nuxt/ui": "latest",
+    "@nuxtjs/tailwindcss": "^6.9.4",
     "@pinia/nuxt": "latest",
     "@tailwindcss/typography": "^0.5.10",
     "daisyui": "latest",
