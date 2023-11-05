@@ -17,9 +17,7 @@ const isOpen = ref(false);
             </LazyNuxtLink>
         </div>
         <div class="navbar-end">
-            <label>
-                <UIcon name="i-heroicons-beaker" />
-            </label>
+            <Colorchanger />
         </div>
     </div>
 </template>

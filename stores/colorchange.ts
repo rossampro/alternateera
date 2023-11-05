@@ -1,4 +1,4 @@
-export const useThemeStore = defineStore('theme', {
+export const useColorStore = defineStore('theme', {
     state: () => ({
         theme: 'dracula'
     }),

@@ -12,7 +12,6 @@ const bgImg = computed(() => {
         <div class="hero-content">
             <div class="prose sm:prose-xl text-center">
                 <h1>We Are Alternate Era</h1>
-                <p>Prepare to get Fucked</p>
             </div>
         </div>
     </div>
