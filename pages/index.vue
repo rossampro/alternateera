@@ -3,7 +3,7 @@ const img = useImage()
 
 const bgImg = computed(() => {
     const imgUrl = img('/alteracover.webp');
-    return `background-image: url(${imgUrl});`
+    return `background-image: url(${imgUrl}); fixed; cover;`
 });
 </script>
 <template>
@@ -51,6 +51,11 @@ const bgImg = computed(() => {
                 </div>
             </div>
         </div>
+        <div class="divider"></div>
+        <div class="bg-base-100">
+            <Aboutcomponent />
+        </div>
+        <div class="divider"></div>
         <div>
             <Audioplayer />
         </div>
