@@ -29,8 +29,8 @@ const bgImg = computed(() => {
                             https://youtube.com/drivingtogroovetown
                         </NuxtLink>
                     </div>
-                    <div class="flex justify-center px-4 py-16 border-t border-base-300 bg-secondary-focus">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Nph92gcaoAs?si=WALdTyYrPc9TC-ur"
+                    <div class="flex flex-shrink justify-center px-4 py-16 border-t border-base-300 bg-secondary-focus">
+                        <iframe width="425" height="239" src="https://www.youtube.com/embed/Nph92gcaoAs?si=WALdTyYrPc9TC-ur"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>
@@ -42,8 +42,8 @@ const bgImg = computed(() => {
                             https://youtube.com/realmofnowhere
                         </NuxtLink>
                     </div>
-                    <div class="flex justify-center px-4 py-16 border-t border-base-300 bg-secondary-focus">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/S9PYaI1kI-E?si=hn1i2FIdtdTwtHSM"
+                    <div class="flex flex-shrink justify-center px-4 py-16 border-t border-base-300 bg-secondary-focus">
+                        <iframe width="425" height="239" src="https://www.youtube.com/embed/S9PYaI1kI-E?si=hn1i2FIdtdTwtHSM"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>
