@@ -1,16 +1,16 @@
 export const useColorStore = defineStore('theme', {
-    state: () => ({
-        theme: 'dracula'
-    }),
+  state: () => ({
+    theme: 'luxury'
+  }),
 
-    getters: {
-        getTheme: (state) => state.theme
-    },
+  getters: {
+    getTheme: (state) => state.theme
+  },
 
-    actions: {
-        setTheme(theme: string): string {
-            this.theme = theme;
-            return this.theme;
-        }
+  actions: {
+    setTheme(theme: string): string {
+      this.theme = theme;
+      return this.theme;
     }
+  }
 })
