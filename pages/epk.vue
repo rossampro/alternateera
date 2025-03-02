@@ -1,10 +1,5 @@
 <script setup lang="ts">
-const img = useImage()
-
-const photo1 = computed(() => {
-    const imgUrl = img('/Jan24th25-27.webp')
-    return img
-})
+const Jan2425Credits = "Jackie Lynn 2025"
 </script>
 
 <template>
@@ -16,43 +11,13 @@ const photo1 = computed(() => {
         </div>
         <div class="divider">
         </div>
-        <div class="flex flex-col m-auto prose text-center hero-content">
-            <div class="join">
-                <NuxtLink to="https://www.instagram.com/alternateera" class="btn btn-circle join-item">
-                    <Icon name="simple-icons:instagram">
-                    </Icon>
-                </NuxtLink>
-                <NuxtLink to="https://www.tiktok.com/@alternateera" class="btn join-item">
-                    <Icon name="simple-icons:tiktok">
-                    </Icon>
-                </NuxtLink>
-                <NuxtLink to="https://x.com/AlternateEra" class="btn join-item">
-                    <Icon name="simple-icons:x">
-                    </Icon>
-                </NuxtLink>
-                <NuxtLink to="https://youtube.com/@alternateeraofficial" class="btn join-item">
-                    <Icon name="simple-icons:youtube">
-                    </Icon>
-                </NuxtLink>
-                <NuxtLink to="https://music.apple.com/us/artist/alternate-era/1387195090" class="btn join-item">
-                    <Icon name="simple-icons:applemusic">
-                    </Icon>
-                </NuxtLink>
-                <NuxtLink to="https://open.spotify.com/artist/6cMj7gCifUnUqsc6QJn2Y8" class="btn join-item">
-                    <Icon name="simple-icons:spotify">
-                    </Icon>
-                </NuxtLink>
-            </div>
-        </div>
+        <Socialmediacomponent></Socialmediacomponent>
         <div class="divider">
         </div>
-        <div class="mockup-browser border border-base-300 bg-base-300">
-            <div class="mockup-browser-toolbar">
-                <NuxtLink to="https://www.alternateera.com" class="link link-hover">
-                    alternateera.com
-                </NuxtLink>
-            </div>
-            <NuxtImg src="/Jan24th25-27.webp"></NuxtImg>
+        <Photobrowsercomponent filename="/Jan24th25-27.webp" :credits="Jan2425Credits">
+        </Photobrowsercomponent>
+        <div class="prose text-center underline m-auto">
+            <h2>Biography</h2>
         </div>
         <div class="hero-content flex-col lg:flex-row w-fit prose">
             <p>
@@ -69,7 +34,11 @@ const photo1 = computed(() => {
                 leaves you wanting more.
             </p>
         </div>
-        <div class="flex flex-col m-auto prose text-center">
+        <Photobrowsercomponent filename="/Jan24th25-9.webp" :credits="Jan2425Credits"></Photobrowsercomponent>
+        <Photobrowsercomponent filename="/Jan24th25-14.webp" :credits="Jan2425Credits"></Photobrowsercomponent>
+        <div class="divider">
+        </div>
+        <div class="flex flex-col m-auto prose text-center underline">
             <h2>Media</h2>
         </div>
         <div class="hero-content">
@@ -104,7 +73,28 @@ const photo1 = computed(() => {
                 </div>
             </div>
         </div>
-        <div class="flex flex-col m-auto prose text-center">
+        <div class="divider divider-base-300">
+        </div>
+        <div class="flex flex-col m-auto prose text-center underline">
+            <h2>Notable Past Venues</h2>
+        </div>
+        <div class="hero-content">
+            <div class="card bg-base-100 w-96 shadow-sm">
+                <figure>
+                    <NuxtLink to="https://www.somasandiego.com">
+                        <NuxtImg src="/somalogo.webp"></NuxtImg>
+                    </NuxtLink>
+                </figure>
+            </div>
+            <div class="card bg-base-100 w-96 shadow-sm">
+                <figure>
+                    <NuxtLink to="https://www.somasandiego.com">
+                        <NuxtImg src="/checafelogo.webp"></NuxtImg>
+                    </NuxtLink>
+                </figure>
+            </div>
+        </div>
+        <div class="flex flex-col m-auto prose text-center underline">
             <h2>Press</h2>
         </div>
         <div class="hero-content">
