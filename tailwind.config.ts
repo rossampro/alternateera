@@ -17,6 +17,6 @@ export default <Partial<Config>>{
         require('daisyui')
     ],
     daisyui: {
-        themes: ['dracula', 'luxury', 'night']
+        themes: ['luxury', 'night']
     }
 }
