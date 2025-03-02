@@ -1,23 +1,128 @@
+<script setup lang="ts">
+const img = useImage()
+
+const photo1 = computed(() => {
+    const imgUrl = img('/Jan24th25-27.webp')
+    return img
+})
+</script>
+
 <template>
-    <div class="bg-gray-900 text-white p-8 rounded-lg shadow-lg max-w-2xl mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-4">Alternate Era</h2>
-        <p class="text-lg text-gray-300 text-center mb-6">Alternative Hip-Hop Duo</p>
-        <p class="text-gray-400 text-md leading-relaxed">
-            Alternate Era is an alternative hip-hop duo blending ethereal production, cinematic soundscapes,
-            and high-energy lyricism. Inspired by <strong>Gorillaz</strong>, they fuse hip-hop, electronic, and
-            experimental rock to create immersive, genre-defying music. With a bi-coastal creative process
-            between <strong>San Diego (Ross – producer/multi-instrumentalist)</strong> and <strong>Manhattan (Chris –
-                lyricist/rapper)</strong>,
-            their sound is both futuristic and nostalgic. Whether through hypnotic beats, introspective lyrics,
-            or electrifying performances, Alternate Era delivers a sonic experience that pushes boundaries.
-        </p>
+    <div class="bg-base-200 text-white p-8 rounded-lg shadow-lg max-w-2xl mx-auto">
+        <div class="prose sm:prose-xl text-center">
+            <h2>
+                Alternate Era
+            </h2>
+        </div>
+        <div class="divider">
+        </div>
+        <div class="flex flex-col m-auto prose text-center hero-content">
+            <div class="join">
+                <NuxtLink to="https://www.instagram.com/alternateera" class="btn btn-circle join-item">
+                    <Icon name="simple-icons:instagram">
+                    </Icon>
+                </NuxtLink>
+                <NuxtLink to="https://www.tiktok.com/@alternateera" class="btn join-item">
+                    <Icon name="simple-icons:tiktok">
+                    </Icon>
+                </NuxtLink>
+                <NuxtLink to="https://x.com/AlternateEra" class="btn join-item">
+                    <Icon name="simple-icons:x">
+                    </Icon>
+                </NuxtLink>
+                <NuxtLink to="https://youtube.com/@alternateeraofficial" class="btn join-item">
+                    <Icon name="simple-icons:youtube">
+                    </Icon>
+                </NuxtLink>
+                <NuxtLink to="https://music.apple.com/us/artist/alternate-era/1387195090" class="btn join-item">
+                    <Icon name="simple-icons:applemusic">
+                    </Icon>
+                </NuxtLink>
+                <NuxtLink to="https://open.spotify.com/artist/6cMj7gCifUnUqsc6QJn2Y8" class="btn join-item">
+                    <Icon name="simple-icons:spotify">
+                    </Icon>
+                </NuxtLink>
+            </div>
+        </div>
+        <div class="divider">
+        </div>
+        <div class="mockup-browser border border-base-300 bg-base-300">
+            <div class="mockup-browser-toolbar">
+                <NuxtLink to="https://www.alternateera.com" class="link link-hover">
+                    alternateera.com
+                </NuxtLink>
+            </div>
+            <NuxtImg src="/Jan24th25-27.webp"></NuxtImg>
+        </div>
+        <div class="hero-content flex-col lg:flex-row w-fit prose">
+            <p>
+                <strong>Alternate Era</strong> is an alternative hip-hop duo blending ethereal production, cinematic
+                soundscapes,
+                and high-energy lyricism. Inspired by <strong>Gorillaz</strong> and <strong>East Coast Hip-Hop</strong>,
+                they fuse hip-hop, electronic, and
+                experimental rock to create immersive, genre-defying music. With a bi-coastal creative process
+                between <strong>San Diego (Ross – producer/multi-instrumentalist)</strong> and <strong>Manhattan (Chris
+                    –
+                    lyricist/rapper)</strong>,
+                their sound is both futuristic and nostalgic. Whether through hypnotic beats, introspective lyrics,
+                or electrifying performances, Alternate Era delivers a sonic experience that pushes boundaries and
+                leaves you wanting more.
+            </p>
+        </div>
+        <div class="flex flex-col m-auto prose text-center">
+            <h2>Media</h2>
+        </div>
+        <div class="hero-content">
+            <div class="mockup-browser border border-base-300 bg-base-300">
+                <div class="mockup-browser-toolbar">
+                    <NuxtLink to="https://youtu.be/jmSAeINdo1Y?si=d76jM25CYFGHoo04" class="link link-hover">
+                        https://youtube.com/kingofthejungle
+                    </NuxtLink>
+                </div>
+
+                <div class="flex flex-shrink justify-center px-4 py-16 border-t border-base-300 bg-secondary-focus">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/jmSAeINdo1Y?si=Gu-_H0JoCAWKyYki"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="hero-content">
+            <div class="mockup-browser border border-base-300 bg-base-300">
+                <div class="mockup-browser-toolbar">
+                    <NuxtLink to="https://youtu.be/S9PYaI1kI-E?si=_nbuZoOLdc2WP76S" class="link link-hover">
+                        https://youtube.com/realmofnowhere
+                    </NuxtLink>
+                </div>
+
+                <div class="flex flex-shrink justify-center px-4 py-16 border-t border-base-300 bg-secondary-focus">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/S9PYaI1kI-E?si=-spywj8Zj4HKwnBl"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col m-auto prose text-center">
+            <h2>Press</h2>
+        </div>
+        <div class="hero-content">
+            <div class="mockup-browser border border-base-300 bg-base-300">
+                <div class="mockup-browser-toolbar">
+                    <NuxtLink
+                        to="https://sdvoyager.com/interview/meet-ross-m-c-lock-watchman-alternate-era-mushroom-caves/"
+                        class="link link-hover">
+                        https://sdvoyager.com/alternateera
+                    </NuxtLink>
+                </div>
+                <div>
+                    <NuxtImg src="/sdvoyager.png"></NuxtImg>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
-<script setup>
-// No additional logic required for this simple component
-</script>
 
-<style scoped>
-/* Additional styling can be added if needed */
-</style>
+<style scoped></style>

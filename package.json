@@ -12,14 +12,14 @@
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@nuxt/icon": "^1.10.3",
-    "@nuxtjs/tailwindcss": "^6.9.4",
+    "@nuxtjs/tailwindcss": "^6.13.1",
     "@pinia/nuxt": "latest",
-    "@tailwindcss/typography": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.16",
     "daisyui": "latest",
-    "nuxt": "^3.8.0",
+    "nuxt": "^3.15.4",
     "nuxt-icon": "latest",
-    "vue": "^3.3.7",
-    "vue-router": "^4.2.5"
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
   },
   "trustedDependencies": [
     "@parcel/watcher",
@@ -27,7 +27,7 @@
     "sharp"
   ],
   "dependencies": {
-    "@nuxt/image": "^1.0.0",
+    "@nuxt/image": "^1.9.0",
     "sharp": "^0.32.6",
     "theme-change": "^2.5.0"
   }
