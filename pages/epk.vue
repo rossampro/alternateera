@@ -36,11 +36,14 @@ const Jan2425Credits = "Jackie Lynn 2025"
         </div>
         <Photobrowsercomponent filename="/Jan24th25-9.webp" :credits="Jan2425Credits"></Photobrowsercomponent>
         <Photobrowsercomponent filename="/Jan24th25-14.webp" :credits="Jan2425Credits"></Photobrowsercomponent>
+
         <div class="divider">
         </div>
+
         <div class="flex flex-col m-auto prose text-center underline">
             <h2>Media</h2>
         </div>
+
         <div class="hero-content">
             <div class="mockup-browser border border-base-300 bg-base-300">
                 <div class="mockup-browser-toolbar">
@@ -57,6 +60,7 @@ const Jan2425Credits = "Jackie Lynn 2025"
                 </div>
             </div>
         </div>
+
         <div class="hero-content">
             <div class="mockup-browser border border-base-300 bg-base-300">
                 <div class="mockup-browser-toolbar">
@@ -67,6 +71,22 @@ const Jan2425Credits = "Jackie Lynn 2025"
 
                 <div class="flex flex-shrink justify-center px-4 py-16 border-t border-base-300 bg-secondary-focus">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/S9PYaI1kI-E?si=-spywj8Zj4HKwnBl"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-content">
+            <div class="mockup-browser border border-base-300 bg-base-300">
+                <div class="mockup-browser-toolbar">
+                    <NuxtLink to="https://youtu.be/S9PYaI1kI-E?si=_nbuZoOLdc2WP76S" class="link link-hover">
+                        https://youtube.com/realmofnowherelive
+                    </NuxtLink>
+                </div>
+                <div class="flex flex-shrink justify-center px-4 py-16 border-t border-base-300 bg-secondary-focus">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/wqE69tC28p8?si=_Cl2dXuwr1YOCZJ6"
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
