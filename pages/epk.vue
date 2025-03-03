@@ -45,6 +45,19 @@ const Jan2425Credits = "Jackie Lynn 2025"
         </div>
 
         <div class="hero-content">
+            <div class="mockup-phone border border-base-300 bg-base-300">
+                <div class="mockup-phone-camera">
+                </div>
+                <div class="mockup-phone-display m-fit h-fit">
+                    <iframe width="464" height="825" src="https://www.youtube.com/embed/JNdUTsWolgE"
+                        title="Sway With Me (ft Ross A.M.) by Alternate Era" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-content">
             <div class="mockup-browser border border-base-300 bg-base-300">
                 <div class="mockup-browser-toolbar">
                     <NuxtLink to="https://youtu.be/jmSAeINdo1Y?si=d76jM25CYFGHoo04" class="link link-hover">
