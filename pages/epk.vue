@@ -16,24 +16,7 @@ const Jan2425Credits = "Jackie Lynn 2025"
         </div>
         <Photobrowsercomponent filename="/Jan24th25-27.webp" :credits="Jan2425Credits">
         </Photobrowsercomponent>
-        <div class="prose text-center underline m-auto">
-            <h2>Biography</h2>
-        </div>
-        <div class="hero-content flex-col lg:flex-row w-fit prose">
-            <p>
-                <strong>Alternate Era</strong> is an alternative hip-hop duo blending ethereal production, cinematic
-                soundscapes,
-                and high-energy lyricism. Inspired by <strong>Gorillaz</strong> and <strong>East Coast Hip-Hop</strong>,
-                they fuse hip-hop, electronic, and
-                experimental rock to create immersive, genre-defying music. With a bi-coastal creative process
-                between <strong>San Diego (Ross – producer/multi-instrumentalist)</strong> and <strong>Manhattan (Chris
-                    –
-                    lyricist/rapper)</strong>,
-                their sound is both futuristic and nostalgic. Whether through hypnotic beats, introspective lyrics,
-                or electrifying performances, Alternate Era delivers a sonic experience that pushes boundaries and
-                leaves you wanting more.
-            </p>
-        </div>
+        <biocomponent></biocomponent>
         <Photobrowsercomponent filename="/Jan24th25-9.webp" :credits="Jan2425Credits"></Photobrowsercomponent>
         <Photobrowsercomponent filename="/Jan24th25-14.webp" :credits="Jan2425Credits"></Photobrowsercomponent>
 
