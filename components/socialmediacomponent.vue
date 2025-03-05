@@ -25,6 +25,10 @@
                 <Icon name="simple-icons:spotify">
                 </Icon>
             </NuxtLink>
+            <NuxtLink to="https://bsky.app/profile/alternateera.bsky.social" class="btn join-item">
+                <Icon name="simple-icons:bluesky">
+                </Icon>
+            </NuxtLink>
         </div>
     </div>
 </template>
