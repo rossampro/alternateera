@@ -3,24 +3,30 @@
 <template>
     <div class="navbar bg-secondary border-base-100">
         <div class="navbar-start">
-            <label class="btn btn-ghost">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-                    <g fill="currentColor">
-                        <path
-                            d="M11.47 3.84a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.06l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 0 0 1.061 1.06l8.69-8.69Z" />
-                        <path
-                            d="m12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.43Z" />
-                    </g>
-                </svg>
+            <label class="btn btn-ghost btn-circle">
+                <LazyNuxtLink to="/">
+                    <Icon name="heroicons:home-solid" class="w-8 h-8"></Icon>
+                </LazyNuxtLink>
             </label>
+            <!--
+            TODO: Get these pages finished
+
+            <label class="btn btn-ghost btn-circle">
+                <LazyNuxtLink to="/music">
+                    <Icon name="heroicons:musical-note-solid" class="w-8 h-8"></Icon>
+                </LazyNuxtLink>
+            </label>
+            <label class="btn btn-ghost btn-circle">
+                <LazyNuxtLink to="/videos">
+                    <Icon name="heroicons:video-camera-solid" class="w-8 h-8"></Icon>
+                </LazyNuxtLink>
+            </label>
+            -->
         </div>
         <div class="navbar-center">
             <LazyNuxtLink to="/" class="btn btn-ghost">
                 <NuxtPicture width="100" height="50" format="webp" src="/alteralogotransparent.png" />
             </LazyNuxtLink>
-        </div>
-        <div class="navbar-end">
-            <Colorchanger />
         </div>
     </div>
 </template>

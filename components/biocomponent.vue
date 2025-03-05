@@ -1,6 +1,6 @@
 <template>
     <div class="prose text-center underline m-auto">
-        <h2>Biography</h2>
+        <h1>Biography</h1>
     </div>
     <div class="hero-content flex-col lg:flex-col w-fit prose">
         <p>

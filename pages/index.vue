@@ -17,12 +17,9 @@ const bgImg = computed(() => {
                 </div>
             </div>
         </div>
+        <div class="divider"></div>
         <div class="bg-base-100">
             <Aboutcomponent />
-        </div>
-        <div class="divider"></div>
-        <div>
-            <Audioplayer />
         </div>
         <div class="divider"></div>
         <div class="prose flex flex-col m-auto text-center">
