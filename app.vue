@@ -6,6 +6,10 @@ useHead({
         {
             name: "description",
             content: "Official website for Alternate Era"
+        },
+        {
+            name: "facebook-domain-verification",
+            content: "p8074ww5ycdocb8c9pdyvo2m35bh89"
         }
     ]
 })
