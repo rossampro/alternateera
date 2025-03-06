@@ -1,11 +1,5 @@
 <script setup lang="ts">
 import { Analytics } from '@vercel/analytics/nuxt'
-const { $fbq } = useNuxtApp();
-
-onMounted(() => {
-    $fbq('track', 'PageView')
-})
-
 useHead({
     title: "Alternate Era",
     meta: [
