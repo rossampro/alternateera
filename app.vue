@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Analytics } from '@vercel/analytics/nuxt'
 useHead({
     title: "Alternate Era",
     meta: [
@@ -21,6 +22,7 @@ useSeoMeta({
 </script>
 <template>
     <div>
+        <Analytics></Analytics>
         <NuxtLayout>
             <LazyNuxtLoadingIndicator />
             <LazyNuxtPage />
