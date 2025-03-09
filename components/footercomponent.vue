@@ -1,5 +1,4 @@
 <template>
-    <div>
-
+    <div class="footer bg-primary">
     </div>
 </template>

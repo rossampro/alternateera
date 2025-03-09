@@ -9,15 +9,8 @@ export default <Partial<Config>>{
         "./app.vue",
         "./error.vue",
     ],
-    theme: {
-        extend: {}
-    },
     plugins: [
         require('@tailwindcss/typography'),
         require('@tailwindcss/forms'),
-        require('daisyui')
-    ],
-    daisyui: {
-        themes: ['luxury', 'night']
-    }
+    ]
 }
