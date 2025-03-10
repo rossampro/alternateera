@@ -1,2 +1,35 @@
 @import 'tailwindcss';
-@plugin 'daisyui';
+@plugin '@tailwindcss/typography';
+@plugin '@tailwindcss/forms';
+@plugin 'daisyui' {
+    name: "cosmicVoid";
+    default: true;
+
+  --color-base-100: '#1A1A2E';
+  --color-base-200: '#2A2A4E';
+  --color-base-300: '#3A3A6E';
+  --color-base-content: '#E0E0E0';
+  --color-primary: '#6D1ED5';
+  --color-secondary: '#00D4FF';
+  --color-accent: '#FF00FF';
+  --color-info: '#00D4FF';
+  --color-success: '#FF6F00';
+  --color-warning: '#FF6F00';
+  --color-error: '#FF00FF';
+
+  /* border radius */
+  --radius-selector: 1rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.5rem;
+
+  /* base sizes */
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+
+  /* border size */
+  --border: 1px;
+
+  /* effects */
+  --depth: 1;
+  --noise: 0;
+}

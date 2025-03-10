@@ -9,8 +9,4 @@ export default <Partial<Config>>{
         "./app.vue",
         "./error.vue",
     ],
-    plugins: [
-        require('@tailwindcss/typography'),
-        require('@tailwindcss/forms'),
-    ]
 }
