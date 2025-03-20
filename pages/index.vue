@@ -18,6 +18,10 @@ const bgImg = computed(() => {
             </div>
         </div>
         <div class="divider"></div>
+        <div class="hero">
+            <Featuredsongcomponent />
+        </div>
+        <div class="divider"></div>
         <div class="bg-base-100">
             <Aboutcomponent />
         </div>
