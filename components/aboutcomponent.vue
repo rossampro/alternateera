@@ -1,8 +1,25 @@
 <template>
-    <div>
-        <div class="flex flex-col text-center m-auto prose">
-            <div>
-                <Biocomponent></Biocomponent>
+    <div class="bg-base-100 py-10">
+        <div class="container mx-auto px-4">
+            <h2 class="mb-5 text-center text-3xl font-bold">
+                About Alternate Era
+            </h2>
+            <div class="flex flex-col items-center md:flex-row">
+                <Biocomponent class="md:w-1/2"></Biocomponent>
+                <div
+                    class="biography-images flex flex-col flex-wrap justify-center gap-2 md:w-1/2 md:flex-row"
+                >
+                    <NuxtImg
+                        src="/Jan24th25-14.webp"
+                        alt="Alternate Era"
+                        class="h-auto w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
+                    />
+                    <NuxtImg
+                        src="/Jan24th25-26.webp"
+                        alt="Alternate Era"
+                        class="h-auto w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
+                    />
+                </div>
             </div>
         </div>
     </div>
