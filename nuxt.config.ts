@@ -1,9 +1,28 @@
 import tailwindcss from "@tailwindcss/vite";
+import { defineOrganization } from "nuxt-schema-org/schema";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: { enabled: true },
     css: ["~/assets/app.css"],
+    site: {
+        name: 'Alternate Era'
+    },
+    schemaOrg: {
+        identity: defineOrganization({
+            name: "Alternate Era",
+            logo: "/alteralogotransparent.png"
+        })
+    },
+    seo: {
+        meta: {
+            title: "Alternate Era",
+            description: "Mind-bending Alternative Hip Hop Fusion",
+            ogImage: "/og-image.png",
+            ogTitle: "Alternate Era",
+            ogDescription: "Mind-bending Alternative Hip Hop Fusion"
+        }
+    },
     vite: {
         plugins: [tailwindcss()],
     },
