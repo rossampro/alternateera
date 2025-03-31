@@ -14,7 +14,7 @@
                 ></Icon>
             </LazyNuxtLink>
 
-            <LazyNuxtLink
+            <!-- <LazyNuxtLink
                 to="/music"
                 class="btn btn-ghost btn-circle hover:bg-accent transition duration-300"
             >
@@ -22,7 +22,7 @@
                     name="heroicons:musical-note-solid"
                     class="text-base-content h-6 w-6"
                 ></Icon>
-            </LazyNuxtLink>
+            </LazyNuxtLink> -->
         </div>
         <div class="navbar-center">
             <LazyNuxtLink to="/" class="flex items-center justify-center">

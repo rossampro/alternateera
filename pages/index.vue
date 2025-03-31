@@ -5,6 +5,7 @@ const bgImg = computed(() => {
     const imgUrl = img("/Jan24th25-12.webp");
     return `background-image: url(${imgUrl}); fixed; cover;`;
 });
+
 </script>
 <template>
     <div>
