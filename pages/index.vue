@@ -5,7 +5,6 @@ const bgImg = computed(() => {
     const imgUrl = img("/Jan24th25-12.webp");
     return `background-image: url(${imgUrl}); fixed; cover;`;
 });
-
 </script>
 <template>
     <div>
@@ -37,21 +36,14 @@ const bgImg = computed(() => {
         <div id="music" class="bg-base-100 py-10">
             <div class="container mx-auto px-4">
                 <h2 class="mb-5 text-center text-3xl font-bold">Our Music</h2>
-                <div
-                    class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3"
-                >
+                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
                     <div
-                        class="music-card bg-base-200 rounded-lg p-5 shadow-lg transition-shadow duration-300 hover:shadow-xl"
-                    >
-                        <iframe
-                            class="animate-fade-in h-64 w-full rounded-lg shadow-lg lg:h-96"
+                        class="music-card bg-base-200 rounded-lg p-5 shadow-lg transition-shadow duration-300 hover:shadow-xl">
+                        <iframe class="animate-fade-in h-64 w-full rounded-lg shadow-lg lg:h-96"
                             src="https://www.youtube.com/embed/JNdUTsWolgE"
-                            title="Sway With Me (ft Ross A.M.) by Alternate Era"
-                            frameborder="0"
+                            title="Sway With Me (ft Ross A.M.) by Alternate Era" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin"
-                            allowfullscreen
-                        ></iframe>
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         <h3 class="mb-2 text-lg font-semibold sm:text-xl">
                             Sway With Me
                         </h3>
@@ -62,28 +54,20 @@ const bgImg = computed(() => {
                             Psychedelic Soundscape, perfect for a late night
                             drive through the desert
                         </p>
-                        <NuxtLink
-                            to="https://youtu.be/JNdUTsWolgE?si=RUWF2xAHWwGJhsqG"
-                        >
+                        <NuxtLink to="https://youtu.be/JNdUTsWolgE?si=RUWF2xAHWwGJhsqG">
                             <button
-                                class="btn btn-primary hover:bg-secondary w-full transform transition-transform hover:scale-105"
-                            >
+                                class="btn btn-primary hover:bg-secondary w-full transform transition-transform hover:scale-105">
                                 Listen Now
                             </button>
                         </NuxtLink>
                     </div>
                     <div
-                        class="music-card bg-base-200 rounded-lg p-5 shadow-lg transition-shadow duration-300 hover:shadow-xl"
-                    >
-                        <iframe
-                            class="animate-fade-in h-64 w-full rounded-lg shadow-lg lg:h-96"
+                        class="music-card bg-base-200 rounded-lg p-5 shadow-lg transition-shadow duration-300 hover:shadow-xl">
+                        <iframe class="animate-fade-in h-64 w-full rounded-lg shadow-lg lg:h-96"
                             src="https://www.youtube.com/embed/jmSAeINdo1Y?si=ReuoCoLp75BixZkU"
-                            title="YouTube video player"
-                            frameborder="0"
+                            title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin"
-                            allowfullscreen
-                        ></iframe>
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         <h3 class="mb-2 text-lg font-semibold sm:text-xl">
                             King of the Jungle
                         </h3>
@@ -94,28 +78,20 @@ const bgImg = computed(() => {
                         <p class="text-base-content mb-4 text-sm sm:text-base">
                             Return to the stone age
                         </p>
-                        <NuxtLink
-                            to="https://link.alternateera.com/kingofthejungle"
-                        >
+                        <NuxtLink to="https://link.alternateera.com/kingofthejungle">
                             <button
-                                class="btn btn-primary hover:bg-secondary w-full transform transition-transform hover:scale-105"
-                            >
+                                class="btn btn-primary hover:bg-secondary w-full transform transition-transform hover:scale-105">
                                 Listen Now
                             </button>
                         </NuxtLink>
                     </div>
                     <div
-                        class="music-card bg-base-200 rounded-lg p-5 shadow-lg transition-shadow duration-300 hover:shadow-xl"
-                    >
-                        <iframe
-                            class="animate-fade-in h-64 w-full rounded-lg shadow-lg lg:h-96"
+                        class="music-card bg-base-200 rounded-lg p-5 shadow-lg transition-shadow duration-300 hover:shadow-xl">
+                        <iframe class="animate-fade-in h-64 w-full rounded-lg shadow-lg lg:h-96"
                             src="https://www.youtube.com/embed/GTX06Ytp9rw?si=4REeESkG6wJYEflA"
-                            title="YouTube video player"
-                            frameborder="0"
+                            title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin"
-                            allowfullscreen
-                        ></iframe>
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         <h3 class="mb-2 text-lg font-semibold sm:text-xl">
                             Let's Start A Cult
                         </h3>
@@ -126,12 +102,9 @@ const bgImg = computed(() => {
                         <p class="text-base-content mb-4 text-sm sm:text-base">
                             Gyrrgy will be back soon
                         </p>
-                        <NuxtLink
-                            to="https://link.alternateera.com/letsstartacult"
-                        >
+                        <NuxtLink to="https://link.alternateera.com/letsstartacult">
                             <button
-                                class="btn btn-primary hover:bg-secondary w-full transform transition-transform hover:scale-105"
-                            >
+                                class="btn btn-primary hover:bg-secondary w-full transform transition-transform hover:scale-105">
                                 Listen Now
                             </button>
                         </NuxtLink>
@@ -166,6 +139,7 @@ const bgImg = computed(() => {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -176,6 +150,7 @@ const bgImg = computed(() => {
         transform: translateY(20px);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
