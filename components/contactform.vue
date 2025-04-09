@@ -1,74 +1,104 @@
 <template>
-    <div class="bg-gradient-to-r from-primary via-neutral to-primary p-8 rounded-lg shadow-lg max-w-lg mx-auto">
-        <form
-            action="https://gmail.us20.list-manage.com/subscribe/post?u=9848c570f48b92b911e6a7195&amp;id=0578cfc38c&amp;f_id=00b759eef0"
-            method="post"
-            id="mc-embedded-subscribe-form"
-            name="mc-embedded-subscribe-form"
-            class="space-y-6"
-            target="_self"
-            novalidate="true"
-        >
-            <h2 class="text-3xl font-bold text-center text-base-content">Subscribe</h2>
-            <div class="text-center text-sm text-base-content">
-                <span class="text-accent">*</span> indicates required
+    <div class="max-w-md mx-auto mt-8 p-6 rounded-box border border-base-300 bg-base-100 shadow-xl">
+        <div v-if="!formSubmitted" class="text-center mb-6">
+            <h4 class="text-primary text-2xl font-semibold">Sway With Us</h4>
+            <p class="text-base-content text-sm mt-2">
+                Join our Email List! You’ll get access to unreleased content, and strange things.
+            </p>
+        </div>
+
+        <form v-if="!formSubmitted" @submit.prevent="submitForm" class="space-y-4">
+            <div>
+                <input v-model="email" aria-label="email" aria-required="true" type="email" name="fields[email]"
+                    placeholder="Email" autocomplete="email" class="input input-bordered w-full" required />
+                <p v-if="email && !isEmailValid" class="text-error text-xs mt-1">Please enter a valid email address.</p>
             </div>
-            <div class="space-y-4">
-                <div class="flex flex-col">
-                    <label for="mce-EMAIL" class="text-base-content font-semibold">Email Address <span class="text-accent">*</span></label>
-                    <input
-                        type="email"
-                        name="EMAIL"
-                        class="input input-bordered w-full"
-                        id="mce-EMAIL"
-                        required
-                        value=""
-                    />
-                </div>
-                <div class="flex flex-col">
-                    <label for="mce-FNAME" class="text-base-content font-semibold">First Name</label>
-                    <input
-                        type="text"
-                        name="FNAME"
-                        class="input input-bordered w-full"
-                        id="mce-FNAME"
-                        value=""
-                    />
-                </div>
+
+            <input v-model="name" aria-label="name" aria-required="true" type="text" name="fields[name]"
+                placeholder="First Name" autocomplete="given-name" class="input input-bordered w-full" required />
+
+            <p class="text-sm text-base-content">
+                You can unsubscribe anytime. For more details, review our Privacy Policy.
+            </p>
+
+            <label class="flex items-start gap-2 text-sm">
+                <input v-model="optIn" type="checkbox" required class="checkbox checkbox-primary mt-1" />
+                <span class="leading-tight">Opt in to receive news and updates.</span>
+            </label>
+
+            <div class="ml-form-recaptcha">
+                <div class="g-recaptcha" data-sitekey="6Lf1KHQUAAAAAFNKEX1hdSWCS3mRMv4FlFaNslaD"></div>
             </div>
-            <div class="bg-base-200 p-4 rounded-lg">
-                <label class="text-base-content font-semibold">Marketing Permissions</label>
-                <p class="text-sm text-base-content">
-                    Please select all the ways you would like to hear from Alternate Era:
-                </p>
-                <fieldset class="space-y-2">
-                    <label class="flex items-center space-x-2">
-                        <input
-                            type="checkbox"
-                            id="gdpr_38151"
-                            name="gdpr[38151]"
-                            class="checkbox"
-                            value="Y"
-                        />
-                        <span class="text-base-content">Email</span>
-                    </label>
-                </fieldset>
-                <p class="text-xs text-base-content mt-2">
-                    You can unsubscribe at any time by clicking the link in the footer of our emails. For information about our privacy practices, please visit our website.
-                </p>
-            </div>
-            <div class="text-xs text-base-content">
-                We use Mailchimp as our marketing platform. By clicking below to subscribe, you acknowledge that your information will be transferred to Mailchimp for processing. <a href="https://mailchimp.com/legal/terms" class="text-accent underline">Learn more</a> about Mailchimp's privacy practices.
-            </div>
-            <div class="flex justify-center">
-                <input
-                    type="submit"
-                    name="subscribe"
-                    id="mc-embedded-subscribe"
-                    class="btn btn-primary w-full"
-                    value="Subscribe"
-                />
-            </div>
+
+            <input type="hidden" name="ml-submit" value="1" />
+            <button type="submit" class="btn btn-primary w-full" :disabled="loading || !isEmailValid">
+                {{ loading ? 'Submitting...' : 'Subscribe' }}
+            </button>
+            <input type="hidden" name="anticsrf" value="true" />
         </form>
+
+        <div v-else class="ml-form-successBody row-success mt-4 text-center">
+            <h4 class="text-success text-xl font-semibold">Thank you!</h4>
+            <p class="text-base-content mt-1">You have successfully joined our subscriber list.</p>
+        </div>
     </div>
 </template>
+
+<script setup>
+const email = ref('')
+const name = ref('')
+const optIn = ref(false)
+const formSubmitted = ref(false)
+const loading = ref(false)
+
+const isEmailValid = computed(() => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    return emailRegex.test(email.value)
+})
+
+onMounted(() => {
+    const script = document.createElement('script')
+    script.src = 'https://www.google.com/recaptcha/api.js'
+    script.async = true
+    script.defer = true
+    document.body.appendChild(script)
+})
+
+const submitForm = async () => {
+    const recaptchaResponse = document.querySelector('[name="g-recaptcha-response"]')?.value
+    if (!recaptchaResponse) {
+        alert('Please complete the reCAPTCHA.')
+        return
+    }
+
+    loading.value = true
+    try {
+        const formData = new URLSearchParams()
+        formData.append('fields[email]', email.value)
+        formData.append('fields[name]', name.value)
+        formData.append('ml-submit', '1')
+        formData.append('anticsrf', 'true')
+        formData.append('g-recaptcha-response', recaptchaResponse)
+
+        const response = await fetch('https://assets.mailerlite.com/jsonp/1433077/forms/151165306525451401/subscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: formData.toString()
+        })
+
+        if (response.ok) {
+            formSubmitted.value = true
+        } else {
+            alert('Something went wrong. Please try again later.')
+        }
+    } catch (error) {
+        alert('Submission failed. Try again later.')
+    } finally {
+        loading.value = false
+    }
+}
+</script>
+
+<style scoped>
+@import url("https://assets.mlcdn.com/fonts.css?version=1743581");
+</style>
