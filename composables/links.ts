@@ -26,7 +26,9 @@ const links: Link[] = [
         "https://www.instagram.com/alternateera",
         "simple-icons:instagram",
     ),
-    new Link("X", "https://x.com/AlternateEra", "simple-icons:x"),
+    new Link("X",
+        "https://x.com/AlternateEra",
+        "simple-icons:x"),
     new Link(
         "Youtube",
         "https://youtube.com/@alternateeraofficial",
@@ -36,11 +38,6 @@ const links: Link[] = [
         "TikTok",
         "https://www.tiktok.com/@alternateera",
         "simple-icons:tiktok",
-    ),
-    new Link(
-        "BlueSky",
-        "https://bsky.app/profile/alternateera.bsky.social",
-        "simple-icons:bluesky",
     ),
     new Link(
         "Patreon",
