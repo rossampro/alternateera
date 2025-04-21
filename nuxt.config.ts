@@ -4,6 +4,16 @@ import { defineOrganization } from "nuxt-schema-org/schema";
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: { enabled: true },
+    app: {
+        head: {
+            script: [
+                {
+                    async: true,
+                    src: '/js/mailerlitepopup.js',
+                }
+            ]
+        }
+    },
     css: ["~/assets/app.css"],
     site: {
         name: 'Alternate Era'
