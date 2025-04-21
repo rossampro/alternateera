@@ -9,7 +9,7 @@ export default defineNuxtConfig({
             script: [
                 {
                     async: true,
-                    src: 'https://assets.mailerlite.com/js/universal.js'
+                    src: '/js/mailerlitepopup.js',
                 }
             ]
         }
