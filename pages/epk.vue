@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const Jan2425Credits = "Jackie Lynn 2025";
+import Videoplayer from "@/components/videoplayer.vue";
 </script>
 
 <template>
@@ -22,19 +23,19 @@ const Jan2425Credits = "Jackie Lynn 2025";
         <biocomponent></biocomponent>
         <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
             <Photobrowsercomponent
-                filename="/Jan24th25-27.webp"
+                filename="https://nnmczhbqcqxnoffzdijp.supabase.co/storage/v1/object/public/images/Jan24th25Photos/Jan24th25-27.webp"
                 :credits="Jan2425Credits"
             ></Photobrowsercomponent>
             <Photobrowsercomponent
-                filename="/Jan24th25-9.webp"
+                filename="https://nnmczhbqcqxnoffzdijp.supabase.co/storage/v1/object/public/images/Jan24th25Photos/Jan24th25-9.webp"
                 :credits="Jan2425Credits"
             ></Photobrowsercomponent>
             <Photobrowsercomponent
-                filename="/Jan24th25-14.webp"
+                filename="https://nnmczhbqcqxnoffzdijp.supabase.co/storage/v1/object/public/images/Jan24th25Photos/Jan24th25-14.webp"
                 :credits="Jan2425Credits"
             ></Photobrowsercomponent>
             <Photobrowsercomponent
-                filename="/Jan24th25-17.webp"
+                filename="https://nnmczhbqcqxnoffzdijp.supabase.co/storage/v1/object/public/images/Jan24th25Photos/Jan24th25-17.webp"
                 :credits="Jan2425Credits"
             ></Photobrowsercomponent>
         </div>
@@ -49,21 +50,13 @@ const Jan2425Credits = "Jackie Lynn 2025";
                         to="https://youtu.be/JNdUTsWolgE"
                         class="link link-hover"
                     >
-                        https://youtube.com/swaywithme
+                        https://yt.com/swaywithme
                     </NuxtLink>
                 </div>
                 <div
                     class="border-base-300 bg-secondary-focus flex justify-center border-t"
                 >
-                    <iframe
-                        class="h-96 w-full md:h-[32rem]"
-                        src="https://www.youtube.com/embed/JNdUTsWolgE"
-                        title="Sway With Me (ft Ross A.M.) by Alternate Era"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin"
-                        allowfullscreen
-                    ></iframe>
+                    <Videoplayer video-id="JNdUTsWolgE" />
                 </div>
             </div>
             <div class="mockup-browser border-base-300 bg-base-300 border">
@@ -72,21 +65,28 @@ const Jan2425Credits = "Jackie Lynn 2025";
                         to="https://youtu.be/jmSAeINdo1Y?si=d76jM25CYFGHoo04"
                         class="link link-hover"
                     >
-                        https://youtube.com/kingofthejungle
+                        https://yt.com/kingofthejungle
                     </NuxtLink>
                 </div>
                 <div
                     class="border-base-300 bg-secondary-focus flex justify-center border-t"
                 >
-                    <iframe
-                        class="h-96 w-full md:h-[32rem]"
-                        src="https://www.youtube.com/embed/jmSAeINdo1Y?si=Gu-_H0JoCAWKyYki"
-                        title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin"
-                        allowfullscreen
-                    ></iframe>
+                    <Videoplayer video-id="jmSAeINdo1Y" />
+                </div>
+            </div>
+            <div class="mockup-browser border-base-300 bg-base-300 border">
+                <div class="mockup-browser-toolbar">
+                    <NuxtLink
+                        to="https://youtu.be/Nph92gcaoAs?si=hi323jTH5_dwp5qb"
+                        class="link link-hover"
+                    >
+                        https://yt.com/drivingtogroovetown
+                    </NuxtLink>
+                </div>
+                <div
+                    class="border-base-300 bg-secondary-focus flex justify-center border-t"
+                >
+                    <Videoplayer video-id="Nph92gcaoAs" />
                 </div>
             </div>
             <div class="mockup-browser border-base-300 bg-base-300 border">
@@ -95,44 +95,13 @@ const Jan2425Credits = "Jackie Lynn 2025";
                         to="https://youtu.be/S9PYaI1kI-E?si=_nbuZoOLdc2WP76S"
                         class="link link-hover"
                     >
-                        https://youtube.com/realmofnowhere
+                        https://yt.com/RoNLive
                     </NuxtLink>
                 </div>
                 <div
                     class="border-base-300 bg-secondary-focus flex justify-center border-t"
                 >
-                    <iframe
-                        class="h-96 w-full md:h-[32rem]"
-                        src="https://www.youtube.com/embed/S9PYaI1kI-E?si=-spywj8Zj4HKwnBl"
-                        title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin"
-                        allowfullscreen
-                    ></iframe>
-                </div>
-            </div>
-            <div class="mockup-browser border-base-300 bg-base-300 border">
-                <div class="mockup-browser-toolbar">
-                    <NuxtLink
-                        to="https://youtu.be/S9PYaI1kI-E?si=_nbuZoOLdc2WP76S"
-                        class="link link-hover"
-                    >
-                        https://youtube.com/realmofnowherelive
-                    </NuxtLink>
-                </div>
-                <div
-                    class="border-base-300 bg-secondary-focus flex justify-center border-t"
-                >
-                    <iframe
-                        class="h-96 w-full md:h-[32rem]"
-                        src="https://www.youtube.com/embed/wqE69tC28p8?si=_Cl2dXuwr1YOCZJ6"
-                        title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin"
-                        allowfullscreen
-                    ></iframe>
+                    <Videoplayer video-id="wqE69tC28p8" />
                 </div>
             </div>
         </div>
