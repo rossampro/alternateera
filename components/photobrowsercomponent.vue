@@ -13,7 +13,7 @@ const props = defineProps({
             </NuxtLink>
         </div>
         <div>
-            <NuxtImg :src="filename"></NuxtImg>
+            <LazyNuxtImg :src="filename" />
             <div class="prose text-center">
                 <NuxtLink
                     to="https://www.jackielynnphoto.com/"

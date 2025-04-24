@@ -37,7 +37,13 @@ export default defineNuxtConfig({
         plugins: [tailwindcss()],
     },
 
-    modules: ["@nuxt/image", "@nuxt/icon", "nuxt-meta-pixel", "@nuxtjs/seo"],
+    modules: [
+      "@nuxt/image",
+      "@nuxt/icon",
+      "nuxt-meta-pixel",
+      "@nuxtjs/seo",
+      "@nuxt/scripts",
+    ],
 
     compatibilityDate: "2025-02-15",
     runtimeConfig: {

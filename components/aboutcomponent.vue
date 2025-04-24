@@ -1,3 +1,6 @@
+<script setup lang="ts">
+let img = "~/assets/images/Jan24th25-14.webp";
+</script>
 <template>
     <div class="bg-base-100 py-10">
         <div class="container mx-auto px-4">
@@ -9,15 +12,17 @@
                 <div
                     class="biography-images flex flex-col flex-wrap justify-center gap-2 md:w-1/2 md:flex-row"
                 >
-                    <NuxtImg
-                        src="/Jan24th25-14.webp"
+                    <LazyNuxtImg
+                        src="https://nnmczhbqcqxnoffzdijp.supabase.co/storage/v1/object/public/images/Jan24th25Photos/Jan24th25-14.webp"
                         alt="Alternate Era"
                         class="h-auto w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
+                        format="webp"
                     />
-                    <NuxtImg
-                        src="/Jan24th25-26.webp"
+                    <LazyNuxtImg
+                        src="https://nnmczhbqcqxnoffzdijp.supabase.co/storage/v1/object/public/images/Jan24th25Photos/Jan24th25-26.webp"
                         alt="Alternate Era"
                         class="h-auto w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
+                        format="webp"
                     />
                 </div>
             </div>
