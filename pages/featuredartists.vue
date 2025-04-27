@@ -22,6 +22,28 @@ const featuredArtists = [
             },
         ],
     },
+    {
+        name: "Bartender",
+        bio: "Mixing wordy wit with angsty, ponderous aggression over a versatile mix of musical styles, from dirty street-level trap and boom bap beats to jazz, soul and even country blues-oriented vibes, Bartender is the ex-rocker turned metaphorical neon ninja capable of dismantling the unwelcome modern gridwork with a pen and some factory-floor scorn.",
+        photo: "https://nnmczhbqcqxnoffzdijp.supabase.co/storage/v1/object/public/images/FeaturedArtists/Bartender/BartenderArtistPhoto.webp",
+        videos: [
+            {
+                id: "d9zUWEcda0U",
+                title: "PUNTO",
+                description: "The Fiat Punto with 5 exhausts is the run-down trash heap that can still go like hell. This is the first official single, written, recorded and mixed by Bartender. Video shot by Shutterflyfiles and edited by Bartender. Song Mastered by µvibes.",
+            },
+            {
+                id: "fKLL56-pUkU",
+                title: "The Equilibrium Verse",
+                description: "An unofficial freeflow of ponderous thought while sat in the back garden one cloudy day. Song and video put together in around 2 hours.",
+            },
+            {
+                id: "KSRetQSgRYY",
+                title: "Dilla Flow",
+                description: "Another freeflow of thought, written quickly and instictively, relating to my situation in the world at that moment and forged by my love for the serenity of J Dilla.",
+            },
+        ],
+    }
 ];
 </script>
 
@@ -37,10 +59,12 @@ const featuredArtists = [
                 </p>
             </div>
         </div>
+
         <div v-for="artist in featuredArtists" :key="artist.name" class="mb-10">
             <!-- Hero Section -->
             <div class="bg-base-200 flex flex-col items-center rounded-lg p-6 shadow-lg md:flex-row">
-                <LazyNuxtImg :src="artist.photo" :alt="artist.name" class="w-full rounded-lg shadow-md md:w-1/3" />
+                <LazyNuxtImg :src="artist.photo" :alt="artist.name" quality="80" format="webp"
+                    class="w-full rounded-lg shadow-md md:w-1/3" />
                 <div class="mt-4 md:mt-0 md:ml-6">
                     <h2 class="text-3xl font-bold">{{ artist.name }}</h2>
                     <p class="text-base-content mt-2">{{ artist.bio }}</p>
@@ -62,6 +86,7 @@ const featuredArtists = [
                 </div>
             </div>
         </div>
+
         <div class="mt-10 text-center">
             <h2 class="text-2xl font-bold">Join the Movement</h2>
             <div class="card-body mt-4 bg-base-200 shadow">
