@@ -43,6 +43,7 @@ export default defineNuxtConfig({
       "nuxt-meta-pixel",
       "@nuxtjs/seo",
       "@nuxt/scripts",
+      "@nuxt/content",
     ],
 
     compatibilityDate: "2025-02-15",
