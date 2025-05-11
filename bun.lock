@@ -36,6 +36,7 @@
   },
   "trustedDependencies": [
     "sharp",
+    "better-sqlite3",
     "esbuild",
     "@parcel/watcher",
   ],
