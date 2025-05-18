@@ -1,17 +1,39 @@
 <script setup lang="ts">
-const { data: blog } = await useAsyncData('blog', () => queryCollection('content').path('/').first());
-
-const { data: devlogposts } = await useAsyncData('devlog', () => queryCollection('content').path('/devlog').all());
-
-useSeoMeta({
-  title: blog.value?.title,
-  description: blog.value?.description
-})
 </script>
 
 <template>
-  <div class="prose prose-lg mx-auto mt-8">
-    <LazyContentRenderer v-if="blog" :value="blog" />
-    <div v-else>Blog not found</div>
-  </div>
+  <article class="prose prose-xl dark:prose-invert flex flex-col items-center text-center mx-auto mt-8">
+    <h1>Blog</h1>
+
+    <div>
+      <div>
+        <NuxtLink to="/devlog">Dev Log</NuxtLink>
+      </div>
+    </div>
+
+    <p>
+      Welcome to the <strong>Alternate Era</strong> blog! We will post various updates and stories here
+      to highlight the exciting projects that we are working on. Alternate Era is more than just a band,
+      we are a full brand that seeks to create compelling media content that aligns with the Alternate
+      Era movement and world view.
+    </p>
+
+    <h2>Music Releases</h2>
+
+    <p>
+      Coming up soon will be our latest single <em>Sway With Me</em>! This song will be releasing on
+      <strong>July 5th 2025</strong> and will be available on all major streaming platforms.
+    </p>
+
+    <NuxtImg
+      src="https://nnmczhbqcqxnoffzdijp.supabase.co/storage/v1/object/public/images/AlbumCovers/SwayWithMeCover.webp"
+      alt="Sway With Me Album Cover" class="rounded-xl shadow-lg my-6" />
+
+    <h2>Dev Log</h2>
+
+    <p>
+      Ross A.M. is working very hard on our upcoming Alternate Era themed video game! Read more about it here at
+      <NuxtLink to="/devlog" class="link link-hover link-accent">devlog</NuxtLink>
+    </p>
+  </article>
 </template>
