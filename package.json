@@ -2,6 +2,9 @@
   "name": "nuxt-app",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -11,37 +14,38 @@
   },
   "devDependencies": {
     "@iconify-json/heroicons": "^1.2.2",
-    "@iconify-json/simple-icons": "^1.2.33",
+    "@iconify-json/simple-icons": "^1.2.34",
     "@nuxt/content": "3.5.1",
     "@nuxt/devtools": "latest",
-    "@nuxt/icon": "^1.12.0",
+    "@nuxt/icon": "^1.13.0",
     "@nuxt/scripts": "0.11.6",
     "@nuxtjs/seo": "3.0.1",
     "@tailwindcss/forms": "^0.5.10",
     "@tailwindcss/typography": "^0.5.16",
-    "@types/youtube": "^0.1.0",
-    "@unhead/vue": "^2.0.8",
-    "daisyui": "^5.0.28",
-    "nuxt": "^3.16.2",
+    "@types/youtube": "^0.1.1",
+    "@unhead/vue": "^2.0.9",
+    "daisyui": "^5.0.35",
+    "nuxt": "^3.17.3",
     "nuxt-icon": "latest",
     "nuxt-meta-pixel": "2.0.2",
     "prettier": "3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
-    "vue": "^3.5.13",
-    "vue-router": "^4.5.0"
+    "vue": "^3.5.14",
+    "vue-router": "^4.5.1"
   },
   "trustedDependencies": [
     "@parcel/watcher",
+    "@tailwindcss/oxide",
     "better-sqlite3",
     "esbuild",
     "sharp"
   ],
   "dependencies": {
     "@nuxt/image": "^1.10.0",
-    "@tailwindcss/vite": "^4.1.4",
+    "@tailwindcss/vite": "^4.1.7",
     "@vercel/analytics": "^1.5.0",
     "sharp": "^0.32.6",
-    "tailwindcss": "^4.1.4",
+    "tailwindcss": "^4.1.7",
     "theme-change": "^2.5.0"
   }
 }
