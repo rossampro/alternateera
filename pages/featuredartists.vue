@@ -1,4 +1,10 @@
 <script lang="ts" setup>
+useSeoMeta({
+  title: 'Featured Artists',
+  description: "Check out some of Alternate Era's top picks for artists in the Alternative Hip Hop Genre"
+})
+
+defineOgImageScreenshot()
 const featuredArtists = [
   {
     name: "Human Xperiment",
@@ -53,7 +59,7 @@ const featuredArtists = [
       <h1 class="text-4xl font-bold max-w-2xl mt-10">Featured Artists</h1>
       <div class="card-body mt-4 bg-base-200 shadow">
         <p class="mt-4 text-lg text-base-content max-w-xl">
-          Alternate Era is more than just a band — it's a movement redefining music and creativity.
+          Alternate Era is a movement redefining music and creativity.
           Here, we connect enlightened individuals with earthshaking artists who challenge conventions
           and inspire through their groundbreaking work. Explore and join the journey of artistic evolution.
         </p>

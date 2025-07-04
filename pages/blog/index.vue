@@ -1,4 +1,11 @@
 <script setup lang="ts">
+useSeoMeta({
+  title: "Alternate Era Blog",
+  description: "Alternate Era Blog",
+  ogTitle: "Alternate Era Blog",
+  ogDescription: "Alternate Era Blog"
+})
+defineOgImageScreenshot()
 </script>
 
 <template>

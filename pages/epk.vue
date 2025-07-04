@@ -1,4 +1,10 @@
 <script setup lang="ts">
+useSeoMeta({
+  title: 'EPK',
+  description: "Alternate Era Electronic Press Kit"
+})
+
+defineOgImageScreenshot()
 const Jan2425Credits = "Jackie Lynn 2025";
 import Videoplayer from "@/components/videoplayer.vue";
 </script>
