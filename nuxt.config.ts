@@ -33,6 +33,11 @@ export default defineNuxtConfig({
             ogDescription: "Mind-bending Alternative Hip Hop Fusion",
         },
     },
+    ogImage: {
+        defaults: {
+            renderer: "chromium",
+        },
+    },
     vite: {
         plugins: [tailwindcss()],
     },
