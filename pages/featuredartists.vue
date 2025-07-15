@@ -10,7 +10,18 @@ useSeoMeta({
         "Check out some of Alternate Era's top picks for artists in the Alternative Hip Hop Genre",
 });
 
-defineOgImageScreenshot();
+const img = useImage();
+
+const ogImage = computed(() => {
+    const imgUrl = img(
+        "https://nnmczhbqcqxnoffzdijp.supabase.co/storage/v1/object/public/images/OgImages/featuredArtistsOg.png",
+    );
+    return `background-image: url(${imgUrl}); fixed; cover;`;
+});
+
+defineOgImageComponent("AeOg", {
+    image: ogImage.value,
+});
 
 const featuredArtists = GetFeaturedArtists();
 </script>

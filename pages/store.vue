@@ -6,8 +6,17 @@ useSeoMeta({
     ogTitle: "Alternate Era Merch Store",
 });
 
-defineOgImageScreenshot({
-    delay: 10000,
+const img = useImage();
+
+const ogImage = computed(() => {
+    const imgUrl = img(
+        "https://nnmczhbqcqxnoffzdijp.supabase.co/storage/v1/object/public/images/OgImages/storeOg.png",
+    );
+    return `background-image: url(${imgUrl}); fixed; cover;`;
+});
+
+defineOgImageComponent("AeOg", {
+    image: ogImage.value,
 });
 </script>
 <template>

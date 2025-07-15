@@ -6,7 +6,18 @@ useSeoMeta({
     ogDescription: "Alternate Era Electronic Press Kit",
 });
 
-defineOgImageScreenshot();
+const img = useImage();
+
+const ogImage = computed(() => {
+    const imgUrl = img(
+        "https://nnmczhbqcqxnoffzdijp.supabase.co/storage/v1/object/public/images/OgImages/epkOg.png",
+    );
+    return `background-image: url(${imgUrl}); fixed; cover;`;
+});
+
+defineOgImageComponent("AeOg", {
+    image: ogImage.value,
+});
 
 const Jan2425Credits = "Jackie Lynn 2025";
 import Videoplayer from "@/components/videoplayer.vue";
