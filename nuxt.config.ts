@@ -4,6 +4,7 @@ import { defineOrganization } from "nuxt-schema-org/schema";
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: { enabled: true },
+    ssr: true,
     app: {
         head: {
             script: [
@@ -32,6 +33,9 @@ export default defineNuxtConfig({
             ogTitle: "Alternate Era",
             ogDescription: "Mind-bending Alternative Hip Hop Fusion",
         },
+    },
+    ogImage: {
+        debug: true,
     },
     vite: {
         plugins: [tailwindcss()],
