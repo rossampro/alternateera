@@ -6,7 +6,18 @@ useSeoMeta({
     ogDescription: "Alternate Era Blog",
 });
 
-defineOgImageScreenshot();
+const img = useImage();
+
+const ogImage = computed(() => {
+    const imgUrl = img(
+        "https://nnmczhbqcqxnoffzdijp.supabase.co/storage/v1/object/public/images/OgImages/blogOg.png",
+    );
+    return `background-image: url(${imgUrl}); fixed; cover;`;
+});
+
+defineOgImageComponent("AeOg", {
+    image: ogImage.value,
+});
 </script>
 
 <template>

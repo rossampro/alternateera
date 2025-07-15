@@ -6,8 +6,19 @@ useSeoMeta({
     ogDescription: "Official Homepage for Alternate Era",
 });
 
-defineOgImageScreenshot();
 const img = useImage();
+
+const ogImage = computed(() => {
+    const imgUrl = img(
+        "https://nnmczhbqcqxnoffzdijp.supabase.co/storage/v1/object/public/images/OgImages/homePageOG.png",
+    );
+    return `background-image: url(${imgUrl}); fixed; cover;`;
+});
+
+defineOgImageComponent("AeOg", {
+    image: ogImage.value,
+});
+
 
 const bgImg = computed(() => {
     const imgUrl = img(

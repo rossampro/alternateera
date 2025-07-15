@@ -4,32 +4,33 @@
     "": {
       "name": "nuxt-app",
       "dependencies": {
+        "@css-inline/css-inline": "^0.15.0",
         "@nuxt/image": "^1.10.0",
-        "@tailwindcss/vite": "^4.1.10",
+        "@tailwindcss/vite": "^4.1.11",
         "@vercel/analytics": "^1.5.0",
         "sharp": "^0.32.6",
-        "tailwindcss": "^4.1.10",
+        "tailwindcss": "^4.1.11",
         "theme-change": "^2.5.0",
       },
       "devDependencies": {
         "@iconify-json/heroicons": "^1.2.2",
-        "@iconify-json/simple-icons": "^1.2.38",
+        "@iconify-json/simple-icons": "^1.2.43",
         "@nuxt/content": "3.5.1",
         "@nuxt/devtools": "latest",
-        "@nuxt/icon": "^1.13.0",
+        "@nuxt/icon": "^1.15.0",
         "@nuxt/scripts": "0.11.6",
         "@nuxtjs/seo": "3.0.1",
         "@tailwindcss/forms": "^0.5.10",
         "@tailwindcss/typography": "^0.5.16",
         "@types/youtube": "^0.1.2",
-        "@unhead/vue": "^2.0.10",
-        "daisyui": "^5.0.43",
-        "nuxt": "^3.17.5",
+        "@unhead/vue": "^2.0.12",
+        "daisyui": "^5.0.46",
+        "nuxt": "^3.17.7",
         "nuxt-icon": "latest",
         "nuxt-meta-pixel": "2.0.2",
         "prettier": "3.5.3",
-        "prettier-plugin-tailwindcss": "^0.6.12",
-        "vue": "^3.5.16",
+        "prettier-plugin-tailwindcss": "^0.6.14",
+        "vue": "^3.5.17",
         "vue-router": "^4.5.1",
       },
     },
@@ -103,6 +104,30 @@
     "@cloudflare/kv-asset-handler": ["@cloudflare/kv-asset-handler@0.4.0", "", { "dependencies": { "mime": "^3.0.0" } }, "sha512-+tv3z+SPp+gqTIcImN9o0hqE9xyfQjI1XD9pL6NuKjua9B1y7mNYv0S9cP+QEbA4ppVgGZEmKOvHX5G5Ei1CVA=="],
 
     "@colors/colors": ["@colors/colors@1.6.0", "", {}, "sha512-Ir+AOibqzrIsL6ajt3Rz3LskB7OiMVHqltZmspbW/TJuTVuyOMirVqAkjfY6JISiLHgyNqicAC8AyHHGzNd/dA=="],
+
+    "@css-inline/css-inline": ["@css-inline/css-inline@0.15.0", "", { "optionalDependencies": { "@css-inline/css-inline-android-arm-eabi": "0.15.0", "@css-inline/css-inline-android-arm64": "0.15.0", "@css-inline/css-inline-darwin-arm64": "0.15.0", "@css-inline/css-inline-darwin-x64": "0.15.0", "@css-inline/css-inline-linux-arm-gnueabihf": "0.15.0", "@css-inline/css-inline-linux-arm64-gnu": "0.15.0", "@css-inline/css-inline-linux-arm64-musl": "0.15.0", "@css-inline/css-inline-linux-x64-gnu": "0.15.0", "@css-inline/css-inline-linux-x64-musl": "0.15.0", "@css-inline/css-inline-win32-arm64-msvc": "0.15.0", "@css-inline/css-inline-win32-x64-msvc": "0.15.0" } }, "sha512-NornghjSrAHCh1aVXLQGYIvWtzoAkgiyJUVrXYd23sX+ZbbcPbUE0TIO11p4XkQrCP94DEx9ET0RUgW0OpXUxg=="],
+
+    "@css-inline/css-inline-android-arm-eabi": ["@css-inline/css-inline-android-arm-eabi@0.15.0", "", { "os": "android", "cpu": "arm" }, "sha512-Ol7YhLlsCo32YbixSHz0KoJ+zYjA0UcJpDIrQ9wrFsatsSTdoGTvm+rPLnExQkme1Ogp/pTf/AXpMNmscVoznA=="],
+
+    "@css-inline/css-inline-android-arm64": ["@css-inline/css-inline-android-arm64@0.15.0", "", { "os": "android", "cpu": "arm64" }, "sha512-1T1PBPI2ob1xhXnOVI42tlRs2IOqFMxS6886T2XflvdRo9iUbuZMwq62UXhVSd+NnHeiLAj4Sc3IeSC8/grejQ=="],
+
+    "@css-inline/css-inline-darwin-arm64": ["@css-inline/css-inline-darwin-arm64@0.15.0", "", { "os": "darwin", "cpu": "arm64" }, "sha512-oiKWmHs/oMrq1/pUop5wqHRaKGl8Hod55IpSE00PJVaeHlFeKNWj7dJ5q00LP4jdbV4uERvN8f9zJj424EN37Q=="],
+
+    "@css-inline/css-inline-darwin-x64": ["@css-inline/css-inline-darwin-x64@0.15.0", "", { "os": "darwin", "cpu": "x64" }, "sha512-eb0aFA3h7A6uTBKTmas1YdOTV05JXeOH6+Qb7sYoMqYh8mO+K398tdeVZfFJBek5UC34+AZdAahAIyyzQUN74w=="],
+
+    "@css-inline/css-inline-linux-arm-gnueabihf": ["@css-inline/css-inline-linux-arm-gnueabihf@0.15.0", "", { "os": "linux", "cpu": "arm" }, "sha512-BKp6mQ8zeiqJc5sGRQrVkkn5YioFFgI/24qBnxCa+61iAtVDwMngumttfFn2zxSImllj4NB+gJGtIbSqTMnB3Q=="],
+
+    "@css-inline/css-inline-linux-arm64-gnu": ["@css-inline/css-inline-linux-arm64-gnu@0.15.0", "", { "os": "linux", "cpu": "arm64" }, "sha512-ehwwWdB9mvbvdwPuX5fD4VQzAKjJwfSAiCgU1vXlzZhEhktvc/EYRE39MXwGbKVjyIs5KJBFFfRoEEMjACQb4w=="],
+
+    "@css-inline/css-inline-linux-arm64-musl": ["@css-inline/css-inline-linux-arm64-musl@0.15.0", "", { "os": "linux", "cpu": "arm64" }, "sha512-U2HqSh5koHwChoykSrGRyyNrtE7TmwQQR39zJDTPJp7vETyZd9t6U5IFlQ6ljMjtaCOJ06Q4i9jbenLDyJAF1w=="],
+
+    "@css-inline/css-inline-linux-x64-gnu": ["@css-inline/css-inline-linux-x64-gnu@0.15.0", "", { "os": "linux", "cpu": "x64" }, "sha512-SQXKVw2LkHt23nAZvbQXTSfKF4U/3Hom/Fyq7MvxHsTHtr0haudhJPMRrWspzFIBbh2yQxJ3BotvNNkZCMrLLw=="],
+
+    "@css-inline/css-inline-linux-x64-musl": ["@css-inline/css-inline-linux-x64-musl@0.15.0", "", { "os": "linux", "cpu": "x64" }, "sha512-wsbaT0ahUEVwyMy63gZjXQDQlhkZSe4WkJpCNvz1j/Nd2/6V86VYdg5+Ao770VHNK93AJX2flnevDVFUMLX/fQ=="],
+
+    "@css-inline/css-inline-win32-arm64-msvc": ["@css-inline/css-inline-win32-arm64-msvc@0.15.0", "", { "os": "win32", "cpu": "arm64" }, "sha512-XOOs61Y4u4PSUxTvuw75rtVVoXZWU0/O6BClwIPCjEwNNE5LXEQCAu38nydAZwlXq4hqUz1ReEpj1DhHnZtZfA=="],
+
+    "@css-inline/css-inline-win32-x64-msvc": ["@css-inline/css-inline-win32-x64-msvc@0.15.0", "", { "os": "win32", "cpu": "x64" }, "sha512-yB+i8JzjbNEDnNvIVi8Lg0IBtJh8vzzbqdv14yG9qLIkGsZ7EPxRzXIQ76ADOH9+BZlSc07MIu1rA7K4Q7j3DQ=="],
 
     "@dabh/diagnostics": ["@dabh/diagnostics@2.0.3", "", { "dependencies": { "colorspace": "1.1.x", "enabled": "2.0.x", "kuler": "^2.0.0" } }, "sha512-hrlQOIi7hAfzsMqlGSFyVucrx38O+j6wiGOf//H2ecvIEqYN4ADBSS2iLMh5UFyDunCNniUIPk/q3riFv45xRA=="],
 
