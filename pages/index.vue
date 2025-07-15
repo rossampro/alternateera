@@ -5,6 +5,8 @@ useSeoMeta({
     ogTitle: "Alternate Era Homepage",
     ogDescription: "Official Homepage for Alternate Era",
 });
+
+defineOgImageScreenshot();
 const img = useImage();
 
 const bgImg = computed(() => {

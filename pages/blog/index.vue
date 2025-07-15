@@ -4,8 +4,9 @@ useSeoMeta({
     description: "Alternate Era Blog",
     ogTitle: "Alternate Era Blog",
     ogDescription: "Alternate Era Blog",
-    ogImage: "/og-image.png",
 });
+
+defineOgImageScreenshot();
 </script>
 
 <template>

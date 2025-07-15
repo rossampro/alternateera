@@ -5,6 +5,10 @@ useSeoMeta({
     ogDescription: "Official Alternate Era Merch Store",
     ogTitle: "Alternate Era Merch Store",
 });
+
+defineOgImageScreenshot({
+    delay: 10000,
+});
 </script>
 <template>
     <div class="h-screen w-screen">
