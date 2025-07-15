@@ -4,8 +4,6 @@ useSeoMeta({
     description: "Official Homepage for Alternate Era",
     ogTitle: "Alternate Era Homepage",
     ogDescription: "Official Homepage for Alternate Era",
-    ogImageUrl:
-        "https://nnmczhbqcqxnoffzdijp.supabase.co/storage/v1/object/public/images/OgImages/homePageOg.webp",
 });
 const img = useImage();
 
