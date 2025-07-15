@@ -4,6 +4,7 @@ import { defineOrganization } from "nuxt-schema-org/schema";
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: { enabled: true },
+    ssr: true,
     app: {
         head: {
             script: [
@@ -34,9 +35,7 @@ export default defineNuxtConfig({
         },
     },
     ogImage: {
-        defaults: {
-            renderer: "chromium",
-        },
+        debug: true,
     },
     vite: {
         plugins: [tailwindcss()],

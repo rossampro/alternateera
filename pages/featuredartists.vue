@@ -5,9 +5,11 @@ useSeoMeta({
     title: "Featured Artists",
     description:
         "Check out some of Alternate Era's top picks for artists in the Alternative Hip Hop Genre",
+    ogTitle: "Featured Artists",
+    ogDescription:
+        "Check out some of Alternate Era's top picks for artists in the Alternative Hip Hop Genre",
 });
 
-defineOgImageScreenshot();
 const featuredArtists = GetFeaturedArtists();
 </script>
 
