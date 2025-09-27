@@ -50,27 +50,27 @@ const featuredArtists = [
         ],
     },
     {
-        name: "STADIUM",
-        bio: "Stadium is a Sydney-based, Argentina-born artist reshaping sound through alternative hiphop, trap, indie, hard rock, and psychedelia. His imprint Premium Color Industries challenges music industry norms, offering raw energy and mythic vision in every release",
-        photo: "https://nnmczhbqcqxnoffzdijp.supabase.co/storage/v1/object/public/images/FeaturedArtists/STADIUM/Stadium.webp",
+        name: "Death Moon",
+        bio: "Death Moon is the masked alien from the dark side of the Moon, sending distorted transmissions through chaotic trap, haunting melodies, and sounds no human has heard before. Once a kid doubted for his “weird voice,” he turned it into his greatest weapon, bending genres until they break. His 2025 EP 2 THE MOON OR DIE, released on the night of a Blood Moon, became an underground statement — proof he can shift from raw aggression to some alien and weird melodies, making it extremely hard to place him in a box.",
+        photo: "https://nnmczhbqcqxnoffzdijp.supabase.co/storage/v1/object/public/images/FeaturedArtists/DeathMoon/DeathMoon.webp",
         videos: [
             {
-                id: "JCQh45lJnHo",
-                title: "Chrome Roses",
+                id: "-Rms3P38WoM",
+                title: "NO THREAT (feat IlyTae)",
                 description:
-                    "Chrome Roses is a sonic offering born from devotion and ache. a love letter to music and those who choose to listen. Stadium fuses beauty and distortion, hope and heartbreak",
+                    "A rebellious rage anthem where Death Moon flexes technical skill over chaotic energy, with ILYTAE’s intro setting off a dynamic clash of styles. ",
             },
             {
-                id: "A_5hbmCjZiU",
-                title: "Nicotine (Blues)",
+                id: "LbP03LPUC58",
+                title: "2DAMOON (feat. Crimson REd)",
                 description:
-                    "Nicotine is Stadium’s gritty confession wrapped in distortion and desire. A love song to the vice that haunts him. Written, produced, and performed in full, it drips with vulnerability and swagger, turning tobacco addiction into poetic obsession. A blues rock spiral where ache meets allure.",
+                    "Death Moon’s most alien track yet, blending screamy but controlled melodies with a spacey, unearthly beat that feels like pure otherworld sound",
             },
             {
-                id: "qhDg6zQRZds",
-                title: "Tell Me - Ft Urchin",
+                id: "Lw8TMPP_awc",
+                title: "INSIDIOUS (feat. Micah1)",
                 description:
-                    "Tell Me is a raw dispatch from the silence between lovers. Written, produced, and performed by Stadium, it threads heartbreak into every bar. chronicling the ache of feeling unheard by someone who once felt cosmic. Vulnerable and defiant, it's a plea wrapped in melody.",
+                    "A furious trap banger packed with sharp flows and raw energy, featuring Polish rapper Micah1 whose rapid-fire verse takes the track to another level.",
             },
         ],
     },
