@@ -82,7 +82,7 @@ const { data: youtubeData } = await useFetch('/api/youtube');
                         <h2 class="text-5xl font-black mb-4 uppercase tracking-widest text-accent text-neon">Gaming</h2>
                         <h3 class="text-2xl font-bold mb-6">Live Streams & Lets Plays</h3>
                         <p class="text-lg text-base-content/80 mb-8 max-w-xl mx-auto lg:mx-0">
-                            Watch us fail spectacularly at the hardest games, rage quit, and occasionally do something incredibly sick. Catch us live on Twitch or check out the VODs.
+                            Watch us fail spectacularly at the hardest games, rage quit, and occasionally do something incredibly sick. Catch us live on YouTube or check out the VODs.
                         </p>
                         <div class="flex gap-4 justify-center lg:justify-start">
                             <a href="https://youtube.com/@alternateeraofficial" target="_blank" class="btn btn-accent btn-lg box-neon-accent rounded-none">
