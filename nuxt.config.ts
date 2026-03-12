@@ -18,6 +18,7 @@ export default defineNuxtConfig({
     css: ["~/assets/app.css"],
     site: {
         name: "Alternate Era",
+        url: "https://alternateera.com",
     },
     schemaOrg: {
         identity: defineOrganization({
@@ -54,11 +55,12 @@ export default defineNuxtConfig({
         "nuxt-meta-pixel",
         "@nuxtjs/seo",
         "@nuxt/scripts",
-        "@nuxt/content",
     ],
 
     compatibilityDate: "2025-02-15",
     runtimeConfig: {
+        youtubeApiKey: process.env.YOUTUBE_API_KEY,
+        youtubeChannelId: process.env.YOUTUBE_CHANNEL_ID,
         public: {
             metapixel: {
                 default: { id: "" },
