@@ -1,7 +1,10 @@
 @import "tailwindcss";
 @plugin '@tailwindcss/typography';
 @plugin '@tailwindcss/forms';
-@plugin 'daisyui' {
+@plugin "daisyui" {
+    themes: cosmicVoid;
+}
+@plugin "daisyui/theme" {
     name: "cosmicVoid";
     default: true;
 
@@ -33,3 +36,124 @@
     --depth: 1;
     --noise: 0;
 }
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+    body {
+        background-color: var(--color-base-100);
+        color: var(--color-base-content);
+        overflow-x: hidden;
+    }
+}
+
+@layer utilities {
+    .text-neon {
+        text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 20px currentColor;
+    }
+    .box-neon {
+        box-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+    }
+    .box-neon-primary {
+        box-shadow: 0 0 10px var(--color-primary), 0 0 20px var(--color-primary);
+    }
+    .box-neon-secondary {
+        box-shadow: 0 0 10px var(--color-secondary), 0 0 20px var(--color-secondary);
+    }
+    .box-neon-accent {
+        box-shadow: 0 0 10px var(--color-accent), 0 0 20px var(--color-accent);
+    }
+    .glitch-text {
+        position: relative;
+    }
+    .glitch-text::before,
+    .glitch-text::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.8;
+    }
+    .glitch-text::before {
+        left: 2px;
+        text-shadow: -1px 0 var(--color-primary);
+        clip: rect(24px, 550px, 90px, 0);
+        animation: glitch-anim 3s infinite linear alternate-reverse;
+    }
+    .glitch-text::after {
+        left: -2px;
+        text-shadow: -1px 0 var(--color-secondary);
+        clip: rect(85px, 550px, 140px, 0);
+        animation: glitch-anim 2s infinite linear alternate-reverse;
+    }
+}
+
+@keyframes glitch-anim {
+    0% {
+        clip: rect(98px, 9999px, 86px, 0);
+    }
+    5% {
+        clip: rect(31px, 9999px, 86px, 0);
+    }
+    10% {
+        clip: rect(69px, 9999px, 98px, 0);
+    }
+    15% {
+        clip: rect(100px, 9999px, 81px, 0);
+    }
+    20% {
+        clip: rect(4px, 9999px, 2px, 0);
+    }
+    25% {
+        clip: rect(98px, 9999px, 90px, 0);
+    }
+    30% {
+        clip: rect(46px, 9999px, 32px, 0);
+    }
+    35% {
+        clip: rect(8px, 9999px, 2px, 0);
+    }
+    40% {
+        clip: rect(72px, 9999px, 35px, 0);
+    }
+    45% {
+        clip: rect(30px, 9999px, 80px, 0);
+    }
+    50% {
+        clip: rect(78px, 9999px, 73px, 0);
+    }
+    55% {
+        clip: rect(38px, 9999px, 37px, 0);
+    }
+    60% {
+        clip: rect(48px, 9999px, 79px, 0);
+    }
+    65% {
+        clip: rect(94px, 9999px, 90px, 0);
+    }
+    70% {
+        clip: rect(2px, 9999px, 16px, 0);
+    }
+    75% {
+        clip: rect(62px, 9999px, 94px, 0);
+    }
+    80% {
+        clip: rect(11px, 9999px, 10px, 0);
+    }
+    85% {
+        clip: rect(23px, 9999px, 78px, 0);
+    }
+    90% {
+        clip: rect(81px, 9999px, 63px, 0);
+    }
+    95% {
+        clip: rect(45px, 9999px, 5px, 0);
+    }
+    100% {
+        clip: rect(38px, 9999px, 2px, 0);
+    }
+}
+

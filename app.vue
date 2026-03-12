@@ -2,6 +2,11 @@
 import { Analytics } from "@vercel/analytics/nuxt";
 useHead({
     title: "Alternate Era",
+    htmlAttrs: {
+        lang: "en",
+        "data-theme": "cosmicVoid",
+        class: "dark"
+    },
     meta: [
         {
             name: "description",
