@@ -57,9 +57,10 @@ const { data: youtubeData } = await useFetch('/api/youtube');
                         ENTERTAINMENT // REFINED CHAOS
                     </p>
                     <div class="flex flex-wrap justify-center gap-4 mb-10">
-                        <a href="#skits" class="btn btn-outline border-primary text-primary hover:bg-primary hover:text-base-100 box-neon-primary rounded-none border-2">Skits</a>
-                        <a href="#music" class="btn btn-outline border-secondary text-secondary hover:bg-secondary hover:text-base-100 box-neon-secondary rounded-none border-2">Music</a>
-                        <a href="#gaming" class="btn btn-outline border-accent text-accent hover:bg-accent hover:text-base-100 box-neon-accent rounded-none border-2">Gaming</a>
+                        <a href="#skits" class="btn btn-outline border-primary text-primary-content hover:bg-primary hover:text-base-100 box-neon-primary rounded-none border-2">Skits</a>
+                        <a href="#music" class="btn btn-outline border-secondary text-secondary-content hover:bg-secondary hover:text-base-100 box-neon-secondary rounded-none border-2">Music</a>
+                        <a href="#gaming" class="btn btn-outline border-accent text-accent-content hover:bg-accent hover:text-base-100 box-neon-accent rounded-none border-2">Gaming</a>
+                        <a href="/store" class="btn btn-outline border-primary text-primary-content hover:bg-primary hover:text-base-100 box-neon-primary rounded-none border-2">Store</a>
                     </div>
                 </div>
                 <div class="mt-12 animate-bounce">
