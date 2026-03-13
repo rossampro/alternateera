@@ -8,19 +8,23 @@
                         <Icon name="heroicons:bars-3" class="w-6 h-6" />
                     </div>
                     <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-200 rounded-box w-52 gap-2">
+                        <li><a href="/">Home</a></li>
                         <li><a href="#skits">Skits</a></li>
                         <li><a href="#music">Music</a></li>
                         <li><a href="#gaming">Gaming</a></li>
+                        <li><a href="/store">Store</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <NuxtLink to="/" class="btn btn-ghost text-xl uppercase tracking-widest font-black text-neon text-primary">Alt Era</NuxtLink>
             </div>
             <div class="navbar-end hidden lg:flex">
-                <ul class="menu menu-horizontal px-1 gap-4 font-bold tracking-wide">
+            <ul class="menu menu-horizontal px-1 gap-4 font-bold tracking-wide">
+                    <li><a href="/" class="hover:text-primary transition-colors">Home</a></li>
                     <li><a href="#skits" class="hover:text-primary transition-colors">Skits</a></li>
                     <li><a href="#music" class="hover:text-secondary transition-colors">Music</a></li>
                     <li><a href="#gaming" class="hover:text-accent transition-colors">Gaming</a></li>
+                    <li><a href="/store" class="hover:text-primary transition-colors">Store</a></li>
                     <li><a href="#contact" class="btn btn-primary btn-sm ml-4 shadow-[0_0_15px_var(--color-primary)]">Follow Us</a></li>
                 </ul>
             </div>
@@ -37,7 +41,7 @@
                 <img src="/alteralogotransparent.png" alt="Alternate Era Logo" class="w-16 h-16 opacity-80" />
                 <p>
                     <span class="font-bold text-lg">Alternate Era Entertainment</span>
-                    <br />Refined Chaos Since 2025
+                    <br />Refined Chaos Since 2018
                 </p>
             </aside>
             <nav>
