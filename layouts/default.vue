@@ -12,11 +12,13 @@
                         <li><a href="#skits">Skits</a></li>
                         <li><a href="#music">Music</a></li>
                         <li><a href="#gaming">Gaming</a></li>
-                        <li><a href="/store">Store</a></li>
+                        <li><a href="https://alternate-era.printify.me/" target="_blank" rel="noopener noreferrer">Store</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
-                <NuxtLink to="/" class="btn btn-ghost text-xl uppercase tracking-widest font-black text-neon text-primary">Alt Era</NuxtLink>
+                <NuxtLink to="/" class="btn btn-ghost px-2">
+                    <img src="/alteralogotransparent.png" alt="Alt Era Logo" class="h-10 w-auto" />
+                </NuxtLink>
             </div>
             <div class="navbar-end hidden lg:flex">
             <ul class="menu menu-horizontal px-1 gap-4 font-bold tracking-wide">
@@ -24,7 +26,7 @@
                     <li><a href="#skits" class="hover:text-primary transition-colors">Skits</a></li>
                     <li><a href="#music" class="hover:text-secondary transition-colors">Music</a></li>
                     <li><a href="#gaming" class="hover:text-accent transition-colors">Gaming</a></li>
-                    <li><a href="/store" class="hover:text-primary transition-colors">Store</a></li>
+                    <li><a href="https://alternate-era.printify.me/" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">Store</a></li>
                     <li><a href="#contact" class="btn btn-primary btn-sm ml-4 shadow-[0_0_15px_var(--color-primary)]">Follow Us</a></li>
                 </ul>
             </div>
