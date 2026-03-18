@@ -58,6 +58,9 @@ export default defineNuxtConfig({
     ],
 
     compatibilityDate: "2025-02-15",
+    routeRules: {
+        "/store": { redirect: { to: "https://alternate-era.printify.me/", statusCode: 302 } },
+    },
     runtimeConfig: {
         youtubeApiKey: process.env.YOUTUBE_API_KEY,
         youtubeChannelId: process.env.YOUTUBE_CHANNEL_ID,
