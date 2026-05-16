@@ -36,6 +36,9 @@ const bgImg = computed(() => {
 
 // Fetch latest gaming videos
 const { data: youtubeData } = await useFetch('/api/youtube');
+
+// Fetch latest shorts
+const { data: youtubeShortsData } = await useFetch('/api/youtube-shorts');
 </script>
 
 <template>
@@ -108,37 +111,46 @@ const { data: youtubeData } = await useFetch('/api/youtube');
             </div>
         </section>
 
-        <!-- Skits Section -->
-        <section id="skits" class="py-24 bg-base-200 relative border-t border-primary/30">
+        <!-- Shorts Section -->
+        <section id="shorts" class="py-24 bg-base-200 relative border-t border-primary/30">
             <div class="container mx-auto px-4 z-10 relative">
                 <div class="text-center mb-16">
-                    <h2 class="text-5xl font-black mb-4 uppercase tracking-widest text-primary text-neon">Skits</h2>
+                    <h2 class="text-5xl font-black mb-4 uppercase tracking-widest text-primary text-neon">Shorts</h2>
                     <p class="text-xl text-base-content/70 max-w-2xl mx-auto">Unfiltered comedy, short films, and absolute madness.</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="card bg-base-100 shadow-2xl overflow-hidden box-neon hover:scale-[1.02] transition-transform duration-300 border border-base-300">
+                
+                <div v-if="youtubeShortsData?.videos && youtubeShortsData.videos.length > 0" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div v-for="(video, index) in youtubeShortsData.videos" :key="video.id" class="card bg-base-100 shadow-2xl overflow-hidden box-neon hover:scale-[1.02] transition-transform duration-300 border border-base-300">
                         <div class="aspect-video bg-neutral flex items-center justify-center relative group">
-                            <div class="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors z-10 pointer-events-none"></div>
-                            <videoplayer video-id="ASw7c7ORGaw" class="w-full h-full object-cover" />
+                            <div :class="['absolute inset-0 transition-colors z-10 pointer-events-none group-hover:bg-transparent', index % 2 === 0 ? 'bg-primary/20' : 'bg-secondary/20']"></div>
+                            <videoplayer :video-id="video.id" class="w-full h-full object-cover" />
                         </div>
                         <div class="card-body">
-                            <h3 class="card-title text-2xl font-bold">ROSS IS KING OF THE ROCK?</h3>
-                            <p class="text-base-content/80">You won't imagine what happens next!!!!</p>
-                        </div>
-                    </div>
-                    <div class="card bg-base-100 shadow-2xl overflow-hidden box-neon hover:scale-[1.02] transition-transform duration-300 border border-base-300">
-                        <div class="aspect-video bg-neutral flex items-center justify-center relative group">
-                            <div class="absolute inset-0 bg-secondary/20 group-hover:bg-transparent transition-colors z-10 pointer-events-none"></div>
-                            <videoplayer video-id="WTghfG1i3og" class="w-full h-full object-cover" />
-                        </div>
-                        <div class="card-body">
-                            <h3 class="card-title text-2xl font-bold">WHEN YOUR CAT TRIES TO MIRDER YOU</h3>
-                            <p class="text-base-content/80">Nova is cute but also terrifying!</p>
+                            <h3 class="card-title text-2xl font-bold" v-html="video.title"></h3>
+                            <p class="text-base-content/80 line-clamp-2" v-html="video.description || 'No description available.'"></p>
                         </div>
                     </div>
                 </div>
+                
+                <div v-else class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="card bg-base-100 shadow-2xl overflow-hidden box-neon hover:scale-[1.02] transition-transform duration-300 border border-base-300 flex items-center justify-center p-12 text-center">
+                        <div class="flex flex-col items-center">
+                            <Icon name="simple-icons:youtube" class="w-16 h-16 text-base-content/20 mb-4" />
+                            <h4 class="text-2xl font-bold text-base-content/50">More Coming Soon</h4>
+                            <p class="text-base-content/40 mt-2 font-mono">Check back for the latest uploads!</p>
+                        </div>
+                    </div>
+                    <div class="card bg-base-100 shadow-2xl overflow-hidden box-neon hover:scale-[1.02] transition-transform duration-300 border border-base-300 flex items-center justify-center p-12 text-center hidden md:flex">
+                        <div class="flex flex-col items-center">
+                            <Icon name="simple-icons:youtube" class="w-16 h-16 text-base-content/20 mb-4" />
+                            <h4 class="text-2xl font-bold text-base-content/50">More Coming Soon</h4>
+                            <p class="text-base-content/40 mt-2 font-mono">Check back for the latest uploads!</p>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="text-center mt-12">
-                     <button class="btn btn-primary btn-lg rounded-none box-neon-primary">View All Skits on YouTube</button>
+                     <a href="https://youtube.com/@alternateeraofficial/shorts" target="_blank" class="btn btn-primary btn-lg rounded-none box-neon-primary">View All Shorts on YouTube</a>
                 </div>
             </div>
         </section>
