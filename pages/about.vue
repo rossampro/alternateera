@@ -78,7 +78,7 @@ const clockImg = computed(() => {
                         </div>
                     </div>
                     <div class="flex-1 text-center lg:text-left order-1 lg:order-2">
-                        <h2 class="text-5xl font-black mb-2 uppercase tracking-widest text-primary text-neon">Ross A.M.</h2>
+                        <h2 class="text-5xl font-black mb-2 uppercase tracking-widest text-secondary text-neon">Ross A.M.</h2>
                         <h3 class="text-2xl font-bold mb-6 text-base-content/80">Producer / Multi-Instrumentalist / Singer</h3>
                         <div class="text-lg text-base-content/80 space-y-4 mb-8 max-w-xl mx-auto lg:mx-0">
                             <p>
@@ -107,14 +107,20 @@ const clockImg = computed(() => {
              <div class="container mx-auto px-4 relative z-10">
                 <div class="flex flex-col lg:flex-row items-center gap-12">
                     <div class="flex-1 text-center lg:text-right">
-                        <h2 class="text-5xl font-black mb-2 uppercase tracking-widest text-secondary text-neon">C-Lock</h2>
+                        <h2 class="text-5xl font-black mb-2 uppercase tracking-widest text-secondary text-neon">C-Lock A.K.A Jetultra</h2>
                         <h3 class="text-2xl font-bold mb-6 text-base-content/80">The Watchman / Lyricist</h3>
                         <div class="text-lg text-base-content/80 space-y-4 mb-8 max-w-xl mx-auto lg:mx-0 lg:ml-auto">
                             <p>
-                                Repping <strong>Manhattan, NY</strong>, C-Lock delivers the raw, high-energy lyricism that cuts straight through the noise.
+                                If you want words of wisdom or just good vibes, look no further than to the Watchman. As the emcee, lyricist, and art director, C-Lock the Watchman is the cosmic heart and soul of Alternate Era.
                             </p>
                             <p>
-                                Bringing the East Coast grit to the Alternate Era universe, his sharp bars and commanding presence anchor the experimental chaos into something tangible and hard-hitting.
+                                Growing up moving around several places between Hawaii, Japan, and California, C-Lock has seen the world from a unique and altered perspective. This inspired an artistic drive that still directs his life to new places and heights.
+                            </p>
+                            <p>
+                                With the encouragement of Ross A.M., C-Lock began recording music as half of the group Alternate Era in 2018, starting his journey into a multi-media saga.
+                            </p>
+                            <p>
+                                As an NYU alumni and competitive gamer, C-Lock is also known by the moniker “Jetultra”. His experience and studies in Film & Television direct the many creative avenues Alternate Era travels to.
                             </p>
                         </div>
                     </div>
