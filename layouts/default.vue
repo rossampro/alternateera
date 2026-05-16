@@ -9,6 +9,7 @@
                     </div>
                     <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-200 rounded-box w-52 gap-2">
                         <li><a href="/">Home</a></li>
+                        <li><a href="/about">About</a></li>
                         <li><a href="#skits">Skits</a></li>
                         <li><a href="#music">Music</a></li>
                         <li><a href="#gaming">Gaming</a></li>
@@ -23,6 +24,7 @@
             <div class="navbar-end hidden lg:flex">
             <ul class="menu menu-horizontal px-1 gap-4 font-bold tracking-wide">
                     <li><a href="/" class="hover:text-primary transition-colors">Home</a></li>
+                    <li><a href="/about" class="hover:text-primary transition-colors">About</a></li>
                     <li><a href="#skits" class="hover:text-primary transition-colors">Skits</a></li>
                     <li><a href="#music" class="hover:text-secondary transition-colors">Music</a></li>
                     <li><a href="#gaming" class="hover:text-accent transition-colors">Gaming</a></li>
