@@ -62,9 +62,15 @@ export default defineNuxtConfig({
         "/store": { redirect: { to: "https://alternate-era.printify.me/", statusCode: 302 } },
     },
     runtimeConfig: {
+        minecraftApplicationDestination: process.env.MINECRAFT_APPLICATION_DESTINATION,
+        minecraftEmailProvider: process.env.MINECRAFT_EMAIL_PROVIDER,
+        mailerliteApiToken: process.env.MAILERLITE_API_TOKEN,
+        mailerliteGroupId: process.env.MAILERLITE_GROUP_ID,
+        discordMinecraftApplicationWebhook: process.env.DISCORD_MINECRAFT_APPLICATION_WEBHOOK,
         youtubeApiKey: process.env.YOUTUBE_API_KEY,
         youtubeChannelId: process.env.YOUTUBE_CHANNEL_ID,
         public: {
+            discordInviteUrl: process.env.NUXT_PUBLIC_DISCORD_INVITE_URL,
             metapixel: {
                 default: { id: "" },
             },

@@ -10,11 +10,12 @@
                     <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-200 rounded-box w-52 gap-2">
                         <li><a href="/">Home</a></li>
                         <li><a href="/about">About</a></li>
-                        <li><a href="#skits">Skits</a></li>
-                        <li><a href="#music">Music</a></li>
-                        <li><a href="#gaming">Gaming</a></li>
+                        <li><a href="/#skits">Skits</a></li>
+                        <li><a href="/#music">Music</a></li>
+                        <li><a href="/#gaming">Gaming</a></li>
+                        <li><NuxtLink to="/minecraft">Minecraft</NuxtLink></li>
                         <li><a href="https://alternate-era.printify.me/" target="_blank" rel="noopener noreferrer">Store</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="/#contact">Contact</a></li>
                     </ul>
                 </div>
                 <NuxtLink to="/" class="btn btn-ghost px-2">
@@ -25,11 +26,12 @@
             <ul class="menu menu-horizontal px-1 gap-4 font-bold tracking-wide">
                     <li><a href="/" class="hover:text-primary transition-colors">Home</a></li>
                     <li><a href="/about" class="hover:text-primary transition-colors">About</a></li>
-                    <li><a href="#skits" class="hover:text-primary transition-colors">Skits</a></li>
-                    <li><a href="#music" class="hover:text-secondary transition-colors">Music</a></li>
-                    <li><a href="#gaming" class="hover:text-accent transition-colors">Gaming</a></li>
+                    <li><a href="/#skits" class="hover:text-primary transition-colors">Skits</a></li>
+                    <li><a href="/#music" class="hover:text-secondary transition-colors">Music</a></li>
+                    <li><a href="/#gaming" class="hover:text-accent transition-colors">Gaming</a></li>
+                    <li><NuxtLink to="/minecraft" class="hover:text-success transition-colors">Minecraft</NuxtLink></li>
                     <li><a href="https://alternate-era.printify.me/" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">Store</a></li>
-                    <li><a href="#contact" class="btn btn-primary btn-sm ml-4 shadow-[0_0_15px_var(--color-primary)]">Follow Us</a></li>
+                    <li><a href="/#contact" class="btn btn-primary btn-sm ml-4 shadow-[0_0_15px_var(--color-primary)]">Follow Us</a></li>
                 </ul>
             </div>
         </nav>

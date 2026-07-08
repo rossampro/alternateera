@@ -63,6 +63,7 @@ const { data: youtubeShortsData } = await useFetch('/api/youtube-shorts');
                         <a href="#skits" class="btn btn-outline border-primary text-primary-content hover:bg-primary hover:text-base-100 box-neon-primary rounded-none border-2">Skits</a>
                         <a href="#music" class="btn btn-outline border-secondary text-secondary-content hover:bg-secondary hover:text-base-100 box-neon-secondary rounded-none border-2">Music</a>
                         <a href="#gaming" class="btn btn-outline border-accent text-accent-content hover:bg-accent hover:text-base-100 box-neon-accent rounded-none border-2">Gaming</a>
+                        <NuxtLink to="/minecraft" class="btn btn-outline border-success text-success hover:bg-success hover:text-base-100 rounded-none border-2">Apply for Minecraft</NuxtLink>
                         <a href="/about" class="btn btn-outline border-secondary text-secondary-content hover:bg-secondary hover:text-base-100 box-neon-secondary rounded-none border-2">About</a>
                         <a href="https://alternate-era.printify.me/" target="_blank" rel="noopener noreferrer" class="btn btn-outline border-primary text-primary-content hover:bg-primary hover:text-base-100 box-neon-primary rounded-none border-2">Store</a>
                     </div>
