@@ -73,3 +73,18 @@ bun run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+## Minecraft applications
+
+The `/minecraft` page uses these environment variables:
+
+```bash
+NUXT_PUBLIC_DISCORD_INVITE_URL=https://discord.gg/your-invite
+MINECRAFT_APPLICATION_DESTINATION=https://your-form-or-webhook-endpoint.example/applications
+MINECRAFT_EMAIL_PROVIDER=your-provider-name
+DISCORD_MINECRAFT_APPLICATION_WEBHOOK=https://discord.com/api/webhooks/...
+MAILERLITE_API_TOKEN=...
+MAILERLITE_GROUP_ID=...
+```
+
+Configure at least one application delivery target: `DISCORD_MINECRAFT_APPLICATION_WEBHOOK` or `MINECRAFT_APPLICATION_DESTINATION`. `MINECRAFT_APPLICATION_DESTINATION` must accept a JSON `POST`. `MAILERLITE_API_TOKEN` and `MAILERLITE_GROUP_ID` are required only when email opt-ins should be sent to MailerLite. Keep private values in `.env` and Vercel environment variables; never commit them.
