@@ -1,7 +1,42 @@
+import { createHash } from "node:crypto";
+
 const platforms = ["Java PC", "Bedrock PC", "Xbox", "PlayStation", "Nintendo Switch", "Mobile", "Other"];
 const ageRanges = ["Under 13", "13–17", "18+"];
 const playerTypes = ["Builder", "Explorer", "Redstone Engineer", "Farmer", "Miner", "PvP", "Casual", "Content Creator / Stream Viewer"];
 const clip = (value: unknown) => String(value || "—").slice(0, 1024);
+const localApplicationEmails = new Set<string>();
+const normalizeEmail = (value: unknown) => String(value).trim().toLowerCase();
+const applicationKey = (email: string) => `minecraft:application:${createHash("sha256").update(email).digest("hex")}`;
+
+async function cacheCommand<T>(config: ReturnType<typeof useRuntimeConfig>, command: unknown[]) {
+    return await $fetch<{ result: T }>(config.minecraftApplicationCacheRestUrl, {
+        method: "POST",
+        headers: { Authorization: `Bearer ${config.minecraftApplicationCacheRestToken}` },
+        body: command,
+    });
+}
+
+async function reserveEmail(config: ReturnType<typeof useRuntimeConfig>, email: string, submittedAt: string) {
+    const key = applicationKey(email);
+    if (config.minecraftApplicationCacheRestUrl && config.minecraftApplicationCacheRestToken) {
+        const response = await cacheCommand<string | null>(config, ["SET", key, submittedAt, "NX"]);
+        return response.result === "OK";
+    }
+
+    if (localApplicationEmails.has(key)) return false;
+    localApplicationEmails.add(key);
+    return true;
+}
+
+async function releaseEmail(config: ReturnType<typeof useRuntimeConfig>, email: string) {
+    const key = applicationKey(email);
+    if (config.minecraftApplicationCacheRestUrl && config.minecraftApplicationCacheRestToken) {
+        await cacheCommand<number>(config, ["DEL", key]);
+        return;
+    }
+
+    localApplicationEmails.delete(key);
+}
 
 export default defineEventHandler(async (event) => {
     const body = await readBody<Record<string, unknown>>(event);
@@ -41,10 +76,22 @@ export default defineEventHandler(async (event) => {
         throw createError({ statusCode: 503, statusMessage: "Email opt-in service is not configured yet." });
     }
 
+    const submittedAt = new Date().toISOString();
+    const email = normalizeEmail(body.email);
+    let isNewEmail = false;
     try {
-        const submittedAt = new Date().toISOString();
+        isNewEmail = await reserveEmail(config, email, submittedAt);
+    } catch {
+        throw createError({ statusCode: 503, statusMessage: "Application duplicate check is unavailable." });
+    }
+    if (!isNewEmail) {
+        throw createError({ statusCode: 409, statusMessage: "An application has already been submitted for this email." });
+    }
+
+    try {
         const application = {
             ...body,
+            email,
             submittedAt,
             emailProvider: body.emailOptIn ? config.minecraftEmailProvider || "MailerLite" : null,
         };
@@ -90,7 +137,7 @@ export default defineEventHandler(async (event) => {
                     Accept: "application/json",
                 },
                 body: {
-                    email: body.email,
+                    email,
                     groups: [config.mailerliteGroupId],
                     fields: {
                         discord_username: body.discordUsername,
@@ -100,6 +147,9 @@ export default defineEventHandler(async (event) => {
             });
         }
     } catch {
+        try {
+            await releaseEmail(config, email);
+        } catch {}
         throw createError({ statusCode: 502, statusMessage: "Application could not be delivered. Please try again later." });
     }
 

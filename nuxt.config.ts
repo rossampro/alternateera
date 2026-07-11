@@ -64,6 +64,8 @@ export default defineNuxtConfig({
     runtimeConfig: {
         minecraftApplicationDestination: process.env.MINECRAFT_APPLICATION_DESTINATION,
         minecraftEmailProvider: process.env.MINECRAFT_EMAIL_PROVIDER,
+        minecraftApplicationCacheRestUrl: process.env.MINECRAFT_APPLICATION_CACHE_REST_URL || process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL,
+        minecraftApplicationCacheRestToken: process.env.MINECRAFT_APPLICATION_CACHE_REST_TOKEN || process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN,
         mailerliteApiToken: process.env.MAILERLITE_API_TOKEN,
         mailerliteGroupId: process.env.MAILERLITE_GROUP_ID,
         discordMinecraftApplicationWebhook: process.env.DISCORD_MINECRAFT_APPLICATION_WEBHOOK,
