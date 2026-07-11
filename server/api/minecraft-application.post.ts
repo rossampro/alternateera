@@ -1,7 +1,54 @@
+import { createHash } from "node:crypto";
+
 const platforms = ["Java PC", "Bedrock PC", "Xbox", "PlayStation", "Nintendo Switch", "Mobile", "Other"];
 const ageRanges = ["Under 13", "13–17", "18+"];
 const playerTypes = ["Builder", "Explorer", "Redstone Engineer", "Farmer", "Miner", "PvP", "Casual", "Content Creator / Stream Viewer"];
 const clip = (value: unknown) => String(value || "—").slice(0, 1024);
+const normalizeEmail = (value: unknown) => String(value).trim().toLowerCase();
+const hashEmail = (email: string) => createHash("sha256").update(email).digest("hex");
+
+function supabaseEndpoint(config: ReturnType<typeof useRuntimeConfig>) {
+    if (!config.supabaseUrl || !config.supabaseServiceRoleKey) {
+        throw createError({ statusCode: 503, statusMessage: "Application duplicate check is not configured yet." });
+    }
+
+    return `${config.supabaseUrl.replace(/\/$/, "")}/rest/v1/${config.supabaseMinecraftApplicationEmailsTable}`;
+}
+
+function supabaseHeaders(config: ReturnType<typeof useRuntimeConfig>) {
+    return {
+        apikey: config.supabaseServiceRoleKey,
+        Authorization: `Bearer ${config.supabaseServiceRoleKey}`,
+    };
+}
+
+async function reserveApplicationEmail(config: ReturnType<typeof useRuntimeConfig>, emailHash: string, submittedAt: string) {
+    try {
+        await $fetch(supabaseEndpoint(config), {
+            method: "POST",
+            headers: {
+                ...supabaseHeaders(config),
+                Prefer: "return=minimal",
+            },
+            body: {
+                email_hash: emailHash,
+                submitted_at: submittedAt,
+            },
+        });
+    } catch (error: any) {
+        if (error?.statusCode === 409) {
+            throw createError({ statusCode: 409, statusMessage: "An application has already been submitted for this email." });
+        }
+        throw error;
+    }
+}
+
+async function releaseApplicationEmail(config: ReturnType<typeof useRuntimeConfig>, emailHash: string) {
+    await $fetch(`${supabaseEndpoint(config)}?email_hash=eq.${emailHash}`, {
+        method: "DELETE",
+        headers: supabaseHeaders(config),
+    });
+}
 
 export default defineEventHandler(async (event) => {
     const body = await readBody<Record<string, unknown>>(event);
@@ -41,10 +88,21 @@ export default defineEventHandler(async (event) => {
         throw createError({ statusCode: 503, statusMessage: "Email opt-in service is not configured yet." });
     }
 
+    const submittedAt = new Date().toISOString();
+    const email = normalizeEmail(body.email);
+    const emailHash = hashEmail(email);
+
     try {
-        const submittedAt = new Date().toISOString();
+        await reserveApplicationEmail(config, emailHash, submittedAt);
+    } catch (error: any) {
+        if (error?.statusCode === 409) throw error;
+        throw createError({ statusCode: 503, statusMessage: "Application duplicate check is unavailable." });
+    }
+
+    try {
         const application = {
             ...body,
+            email,
             submittedAt,
             emailProvider: body.emailOptIn ? config.minecraftEmailProvider || "MailerLite" : null,
         };
@@ -90,7 +148,7 @@ export default defineEventHandler(async (event) => {
                     Accept: "application/json",
                 },
                 body: {
-                    email: body.email,
+                    email,
                     groups: [config.mailerliteGroupId],
                     fields: {
                         discord_username: body.discordUsername,
@@ -99,7 +157,10 @@ export default defineEventHandler(async (event) => {
                 },
             });
         }
-    } catch {
+    } catch (error: any) {
+        try {
+            await releaseApplicationEmail(config, emailHash);
+        } catch {}
         throw createError({ statusCode: 502, statusMessage: "Application could not be delivered. Please try again later." });
     }
 

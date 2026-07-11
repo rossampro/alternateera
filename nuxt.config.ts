@@ -64,6 +64,9 @@ export default defineNuxtConfig({
     runtimeConfig: {
         minecraftApplicationDestination: process.env.MINECRAFT_APPLICATION_DESTINATION,
         minecraftEmailProvider: process.env.MINECRAFT_EMAIL_PROVIDER,
+        supabaseUrl: process.env.SUPABASE_URL,
+        supabaseServiceRoleKey: process.env.SUPABASE_SERVICE_ROLE_KEY,
+        supabaseMinecraftApplicationEmailsTable: process.env.SUPABASE_MINECRAFT_APPLICATION_EMAILS_TABLE || "minecraft_application_emails",
         mailerliteApiToken: process.env.MAILERLITE_API_TOKEN,
         mailerliteGroupId: process.env.MAILERLITE_GROUP_ID,
         discordMinecraftApplicationWebhook: process.env.DISCORD_MINECRAFT_APPLICATION_WEBHOOK,
