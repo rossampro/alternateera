@@ -75,7 +75,7 @@ export default defineNuxtConfig({
         youtubeChannelId: process.env.YOUTUBE_CHANNEL_ID,
         public: {
             discordInviteUrl: process.env.NUXT_PUBLIC_DISCORD_INVITE_URL,
-            recaptchaSiteKey: process.env.NUXT_PUBLIC_RECAPTCHA_SITE_KEY,
+            recaptchaSiteKey: process.env.NUXT_PUBLIC_RECAPTCHA_SITE_KEY || "6Lf1KHQUAAAAAFNKEX1hdSWCS3mRMv4FlFaNslaD",
             metapixel: {
                 default: { id: "" },
             },
