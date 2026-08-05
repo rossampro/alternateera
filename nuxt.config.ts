@@ -69,11 +69,13 @@ export default defineNuxtConfig({
         supabaseMinecraftApplicationEmailsTable: process.env.SUPABASE_MINECRAFT_APPLICATION_EMAILS_TABLE || "minecraft_application_emails",
         mailerliteApiToken: process.env.MAILERLITE_API_TOKEN,
         mailerliteGroupId: process.env.MAILERLITE_GROUP_ID,
+        recaptchaSecretKey: process.env.RECAPTCHA_SECRET_KEY,
         discordMinecraftApplicationWebhook: process.env.DISCORD_MINECRAFT_APPLICATION_WEBHOOK,
         youtubeApiKey: process.env.YOUTUBE_API_KEY,
         youtubeChannelId: process.env.YOUTUBE_CHANNEL_ID,
         public: {
             discordInviteUrl: process.env.NUXT_PUBLIC_DISCORD_INVITE_URL,
+            recaptchaSiteKey: process.env.NUXT_PUBLIC_RECAPTCHA_SITE_KEY,
             metapixel: {
                 default: { id: "" },
             },

@@ -7,6 +7,27 @@ const clip = (value: unknown) => String(value || "—").slice(0, 1024);
 const normalizeEmail = (value: unknown) => String(value).trim().toLowerCase();
 const hashEmail = (email: string) => createHash("sha256").update(email).digest("hex");
 
+async function verifyCaptcha(config: ReturnType<typeof useRuntimeConfig>, token: unknown) {
+    if (typeof token !== "string" || !token.trim()) {
+        throw createError({ statusCode: 400, statusMessage: "Complete the reCAPTCHA." });
+    }
+    if (!config.recaptchaSecretKey) {
+        throw createError({ statusCode: 503, statusMessage: "reCAPTCHA is not configured yet." });
+    }
+
+    const response = await $fetch<{ success: boolean }>("https://www.google.com/recaptcha/api/siteverify", {
+        method: "POST",
+        body: new URLSearchParams({
+            secret: config.recaptchaSecretKey,
+            response: token,
+        }),
+    });
+
+    if (!response.success) {
+        throw createError({ statusCode: 400, statusMessage: "reCAPTCHA verification failed." });
+    }
+}
+
 function supabaseEndpoint(config: ReturnType<typeof useRuntimeConfig>) {
     if (!config.supabaseUrl || !config.supabaseServiceRoleKey) {
         throw createError({ statusCode: 503, statusMessage: "Application duplicate check is not configured yet." });
@@ -81,6 +102,8 @@ export default defineEventHandler(async (event) => {
     }
 
     const config = useRuntimeConfig(event);
+    await verifyCaptcha(config, body.captchaToken);
+
     if (!config.minecraftApplicationDestination && !config.discordMinecraftApplicationWebhook) {
         throw createError({ statusCode: 503, statusMessage: "Application service is not configured yet." });
     }
@@ -100,8 +123,9 @@ export default defineEventHandler(async (event) => {
     }
 
     try {
+        const { captchaToken, ...applicationBody } = body;
         const application = {
-            ...body,
+            ...applicationBody,
             email,
             submittedAt,
             emailProvider: body.emailOptIn ? config.minecraftEmailProvider || "MailerLite" : null,
