@@ -1,4 +1,4 @@
-import { defineEventHandler } from 'h3'
+import { defineEventHandler, setHeader } from 'h3'
 
 export default defineEventHandler(async (event) => {
     const config = useRuntimeConfig(event)
@@ -10,9 +10,9 @@ export default defineEventHandler(async (event) => {
     }
 
     try {
-        // Fetch the 3 most recent videos from the channel
+        // Fetch the most recent completed live broadcasts from the channel
         const response = await fetch(
-            `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=date&maxResults=3`
+            `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&type=video&eventType=completed&order=date&maxResults=3`
         )
 
         // Cache the response for 1 hour to heavily reduce API usage
