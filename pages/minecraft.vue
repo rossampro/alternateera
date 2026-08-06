@@ -8,6 +8,7 @@ useSeoMeta({
 
 const config = useRuntimeConfig();
 const discordInviteUrl = computed(() => config.public.discordInviteUrl || "#discord-required");
+const recaptchaSiteKey = computed(() => config.public.recaptchaSiteKey);
 const platforms = ["Java PC", "Bedrock PC", "Xbox", "PlayStation", "Nintendo Switch", "Mobile", "Other"];
 const ageRanges = ["Under 13", "13–17", "18+"];
 const playerTypeOptions = ["Builder", "Explorer", "Redstone Engineer", "Farmer", "Miner", "PvP", "Casual", "Content Creator / Stream Viewer"];
@@ -53,6 +54,15 @@ const submitting = ref(false);
 const submitted = ref(false);
 const submitError = ref("");
 
+onMounted(() => {
+    if (document.querySelector('script[src="https://www.google.com/recaptcha/api.js"]')) return;
+    const script = document.createElement("script");
+    script.src = "https://www.google.com/recaptcha/api.js";
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+});
+
 watch(() => form.platform, (platform) => {
     if (platform === "Java PC") form.bedrockGamertag = "";
     else form.javaUsername = "";
@@ -80,12 +90,18 @@ function validate() {
 async function submitApplication() {
     submitError.value = "";
     if (!validate()) return;
+    const captchaToken = document.querySelector<HTMLTextAreaElement>('[name="g-recaptcha-response"]')?.value;
+    if (!captchaToken) {
+        submitError.value = "Please complete the reCAPTCHA.";
+        return;
+    }
     submitting.value = true;
     try {
-        await $fetch("/api/minecraft-application", { method: "POST", body: form });
+        await $fetch("/api/minecraft-application", { method: "POST", body: { ...form, captchaToken } });
         submitted.value = true;
     } catch (error: any) {
         submitError.value = error?.data?.statusMessage || "Application could not be submitted. Please try again later.";
+        window.grecaptcha?.reset();
     } finally {
         submitting.value = false;
     }
@@ -268,6 +284,7 @@ async function submitApplication() {
                             <label class="flex items-start gap-3"><input v-model="form.emailOptIn" type="checkbox" class="checkbox checkbox-secondary mt-1" /><span>I'd like emails about Alternate Era events, Minecraft updates, livestreams, and community announcements. (Optional)</span></label>
                         </div>
 
+                        <div class="g-recaptcha" :data-sitekey="recaptchaSiteKey"></div>
                         <div v-if="submitError" class="alert alert-error" role="alert">{{ submitError }}</div>
                         <button type="submit" class="btn btn-primary btn-lg w-full" :disabled="submitting">{{ submitting ? "Submitting…" : "Submit application" }}</button>
                     </form>

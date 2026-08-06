@@ -27,7 +27,7 @@
             </label>
 
             <div class="ml-form-recaptcha">
-                <div class="g-recaptcha" data-sitekey="6Lf1KHQUAAAAAFNKEX1hdSWCS3mRMv4FlFaNslaD"></div>
+                <div class="g-recaptcha" :data-sitekey="config.public.recaptchaSiteKey"></div>
             </div>
 
             <input type="hidden" name="ml-submit" value="1" />
@@ -50,6 +50,7 @@ const name = ref('')
 const optIn = ref(false)
 const formSubmitted = ref(false)
 const loading = ref(false)
+const config = useRuntimeConfig()
 
 const isEmailValid = computed(() => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
