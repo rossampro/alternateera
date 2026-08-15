@@ -52,6 +52,30 @@ const errors = ref<Record<string, string>>({});
 const submitting = ref(false);
 const submitted = ref(false);
 const submitError = ref("");
+const recaptchaContainer = ref<HTMLElement | null>(null);
+const recaptchaWidgetId = ref<number | null>(null);
+const recaptchaSiteKey = "6Lf1KHQUAAAAAFNKEX1hdSWCS3mRMv4FlFaNslaD";
+
+function renderRecaptcha() {
+    const grecaptcha = (window as any).grecaptcha;
+    if (!recaptchaContainer.value || !grecaptcha?.render || recaptchaWidgetId.value !== null) return;
+    recaptchaWidgetId.value = grecaptcha.render(recaptchaContainer.value, { sitekey: recaptchaSiteKey });
+}
+
+onMounted(() => {
+    const existingScript = document.querySelector<HTMLScriptElement>('script[src^="https://www.google.com/recaptcha/api.js"]');
+    if (existingScript) {
+        renderRecaptcha();
+        existingScript.addEventListener("load", renderRecaptcha, { once: true });
+        return;
+    }
+    const script = document.createElement("script");
+    script.src = "https://www.google.com/recaptcha/api.js";
+    script.async = true;
+    script.defer = true;
+    script.addEventListener("load", renderRecaptcha, { once: true });
+    document.body.appendChild(script);
+});
 
 watch(() => form.platform, (platform) => {
     if (platform === "Java PC") form.bedrockGamertag = "";
@@ -80,6 +104,14 @@ function validate() {
 async function submitApplication() {
     submitError.value = "";
     if (!validate()) return;
+    const grecaptcha = (window as any).grecaptcha;
+    const recaptchaResponse = recaptchaWidgetId.value !== null && grecaptcha?.getResponse
+        ? grecaptcha.getResponse(recaptchaWidgetId.value)
+        : document.querySelector<HTMLTextAreaElement>('[name="g-recaptcha-response"]')?.value;
+    if (!recaptchaResponse) {
+        submitError.value = "Please complete the reCAPTCHA.";
+        return;
+    }
     submitting.value = true;
     try {
         await $fetch("/api/minecraft-application", { method: "POST", body: form });
@@ -268,6 +300,7 @@ async function submitApplication() {
                             <label class="flex items-start gap-3"><input v-model="form.emailOptIn" type="checkbox" class="checkbox checkbox-secondary mt-1" /><span>I'd like emails about Alternate Era events, Minecraft updates, livestreams, and community announcements. (Optional)</span></label>
                         </div>
 
+                        <div ref="recaptchaContainer"></div>
                         <div v-if="submitError" class="alert alert-error" role="alert">{{ submitError }}</div>
                         <button type="submit" class="btn btn-primary btn-lg w-full" :disabled="submitting">{{ submitting ? "Submitting…" : "Submit application" }}</button>
                     </form>
