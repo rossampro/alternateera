@@ -53,6 +53,15 @@ const submitting = ref(false);
 const submitted = ref(false);
 const submitError = ref("");
 
+onMounted(() => {
+    if (document.querySelector('script[src="https://www.google.com/recaptcha/api.js"]')) return;
+    const script = document.createElement("script");
+    script.src = "https://www.google.com/recaptcha/api.js";
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+});
+
 watch(() => form.platform, (platform) => {
     if (platform === "Java PC") form.bedrockGamertag = "";
     else form.javaUsername = "";
@@ -80,6 +89,11 @@ function validate() {
 async function submitApplication() {
     submitError.value = "";
     if (!validate()) return;
+    const recaptchaResponse = document.querySelector<HTMLTextAreaElement>('[name="g-recaptcha-response"]')?.value;
+    if (!recaptchaResponse) {
+        submitError.value = "Please complete the reCAPTCHA.";
+        return;
+    }
     submitting.value = true;
     try {
         await $fetch("/api/minecraft-application", { method: "POST", body: form });
@@ -268,6 +282,7 @@ async function submitApplication() {
                             <label class="flex items-start gap-3"><input v-model="form.emailOptIn" type="checkbox" class="checkbox checkbox-secondary mt-1" /><span>I'd like emails about Alternate Era events, Minecraft updates, livestreams, and community announcements. (Optional)</span></label>
                         </div>
 
+                        <div class="g-recaptcha" data-sitekey="6Lf1KHQUAAAAAFNKEX1hdSWCS3mRMv4FlFaNslaD"></div>
                         <div v-if="submitError" class="alert alert-error" role="alert">{{ submitError }}</div>
                         <button type="submit" class="btn btn-primary btn-lg w-full" :disabled="submitting">{{ submitting ? "Submitting…" : "Submit application" }}</button>
                     </form>
