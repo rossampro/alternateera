@@ -59,7 +59,10 @@ const recaptchaSiteKey = "6Lf1KHQUAAAAAFNKEX1hdSWCS3mRMv4FlFaNslaD";
 function renderRecaptcha() {
     const grecaptcha = (window as any).grecaptcha;
     if (!recaptchaContainer.value || !grecaptcha?.render || recaptchaWidgetId.value !== null) return;
-    recaptchaWidgetId.value = grecaptcha.render(recaptchaContainer.value, { sitekey: recaptchaSiteKey });
+    recaptchaWidgetId.value = grecaptcha.render(recaptchaContainer.value, {
+        sitekey: recaptchaSiteKey,
+        size: window.matchMedia("(max-width: 380px)").matches ? "compact" : "normal",
+    });
 }
 
 onMounted(() => {
@@ -300,7 +303,7 @@ async function submitApplication() {
                             <label class="flex items-start gap-3"><input v-model="form.emailOptIn" type="checkbox" class="checkbox checkbox-secondary mt-1" /><span>I'd like emails about Alternate Era events, Minecraft updates, livestreams, and community announcements. (Optional)</span></label>
                         </div>
 
-                        <div ref="recaptchaContainer"></div>
+                        <div ref="recaptchaContainer" class="min-h-[78px]"></div>
                         <div v-if="submitError" class="alert alert-error" role="alert">{{ submitError }}</div>
                         <button type="submit" class="btn btn-primary btn-lg w-full" :disabled="submitting">{{ submitting ? "Submitting…" : "Submit application" }}</button>
                     </form>
