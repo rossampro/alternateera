@@ -52,6 +52,8 @@ async function releaseApplicationEmail(config: ReturnType<typeof useRuntimeConfi
 
 export default defineEventHandler(async (event) => {
     const body = await readBody<Record<string, unknown>>(event);
+    assertNotSpam(body);
+
     const requiredStrings = ["email", "discordUsername", "platform", "ageRange", "whyJoin", "banHistory"];
 
     if (requiredStrings.some((field) => typeof body[field] !== "string" || !body[field]?.toString().trim())) {
@@ -100,8 +102,9 @@ export default defineEventHandler(async (event) => {
     }
 
     try {
+        const { website, formStartedAt, ...applicationBody } = body;
         const application = {
-            ...body,
+            ...applicationBody,
             email,
             submittedAt,
             emailProvider: body.emailOptIn ? config.minecraftEmailProvider || "MailerLite" : null,
