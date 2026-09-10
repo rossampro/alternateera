@@ -26,15 +26,12 @@
                 <span class="leading-tight">Opt in to receive news and updates.</span>
             </label>
 
-            <div class="ml-form-recaptcha">
-                <div class="g-recaptcha" data-sitekey="6Lf1KHQUAAAAAFNKEX1hdSWCS3mRMv4FlFaNslaD"></div>
-            </div>
+            <input v-model="website" type="text" name="website" autocomplete="off" tabindex="-1" aria-hidden="true"
+                class="hidden" />
 
-            <input type="hidden" name="ml-submit" value="1" />
             <button type="submit" class="btn btn-primary w-full" :disabled="loading || !isEmailValid">
                 {{ loading ? 'Submitting...' : 'Subscribe' }}
             </button>
-            <input type="hidden" name="anticsrf" value="true" />
         </form>
 
         <div v-else class="ml-form-successBody row-success mt-4 text-center">
@@ -50,47 +47,19 @@ const name = ref('')
 const optIn = ref(false)
 const formSubmitted = ref(false)
 const loading = ref(false)
+const website = ref('')
+const formStartedAt = Date.now()
 
-const isEmailValid = computed(() => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    return emailRegex.test(email.value)
-})
-
-onMounted(() => {
-    const script = document.createElement('script')
-    script.src = 'https://www.google.com/recaptcha/api.js'
-    script.async = true
-    script.defer = true
-    document.body.appendChild(script)
-})
+const isEmailValid = computed(() => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value))
 
 const submitForm = async () => {
-    const recaptchaResponse = document.querySelector('[name="g-recaptcha-response"]')?.value
-    if (!recaptchaResponse) {
-        alert('Please complete the reCAPTCHA.')
-        return
-    }
-
     loading.value = true
     try {
-        const formData = new URLSearchParams()
-        formData.append('fields[email]', email.value)
-        formData.append('fields[name]', name.value)
-        formData.append('ml-submit', '1')
-        formData.append('anticsrf', 'true')
-        formData.append('g-recaptcha-response', recaptchaResponse)
-
-        const response = await fetch('https://assets.mailerlite.com/jsonp/1433077/forms/151165306525451401/subscribe', {
+        await $fetch('/api/newsletter', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: formData.toString()
+            body: { email: email.value, name: name.value, optIn: optIn.value, website: website.value, formStartedAt }
         })
-
-        if (response.ok) {
-            formSubmitted.value = true
-        } else {
-            alert('Something went wrong. Please try again later.')
-        }
+        formSubmitted.value = true
     } catch (error) {
         alert('Submission failed. Try again later.')
     } finally {
